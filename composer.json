@@ -1,0 +1,13 @@
+{
+    "name": "srkovnar/bills-bus-benches",
+    "type": "project",
+    "authors": [
+        {
+            "name": "srkovnar",
+            "email": "srkovnar@gmail.com"
+        }
+    ],
+    "require": {
+        "fakerphp/faker": "^1.23"
+    }
+}

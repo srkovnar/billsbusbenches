@@ -52,8 +52,48 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 /* Load custom markers */
-let broken_icon = L.icon({
-    iconUrl: "./assets/icons/icon1.png",
+let icon_red = L.icon({
+    iconUrl: "./assets/icons/icon_red.png",
+    //shadowUrl: "",
+
+    iconSize:     [38, 38], // size of the icon (width, height)
+    //shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [19, 38], // point of the icon which will correspond to marker's location
+    //shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [1.5, -30] // point from which the popup should open relative to the iconAnchor
+});
+let icon_yellow = L.icon({
+    iconUrl: "./assets/icons/icon_yellow.png",
+    //shadowUrl: "",
+
+    iconSize:     [38, 38], // size of the icon (width, height)
+    //shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [19, 38], // point of the icon which will correspond to marker's location
+    //shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [1.5, -30] // point from which the popup should open relative to the iconAnchor
+});
+let icon_blue = L.icon({
+    iconUrl: "./assets/icons/icon_blue.png",
+    //shadowUrl: "",
+
+    iconSize:     [38, 38], // size of the icon (width, height)
+    //shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [19, 38], // point of the icon which will correspond to marker's location
+    //shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [1.5, -30] // point from which the popup should open relative to the iconAnchor
+});
+let icon_gray = L.icon({
+    iconUrl: "./assets/icons/icon_gray.png",
+    //shadowUrl: "",
+
+    iconSize:     [38, 38], // size of the icon (width, height)
+    //shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [19, 38], // point of the icon which will correspond to marker's location
+    //shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [1.5, -30] // point from which the popup should open relative to the iconAnchor
+});
+let icon_green = L.icon({
+    iconUrl: "./assets/icons/icon_green.png",
     //shadowUrl: "",
 
     iconSize:     [38, 38], // size of the icon (width, height)
@@ -76,15 +116,26 @@ marker_JSON_data.then((data) => {
     let lng_sum = 0;
     let num_pts = 0;
 
+    /* Map bench statuses to icon colors */
+    let icon_map = {
+        "active": icon_blue,
+        "broken": icon_red,
+        "missing": icon_yellow
+    };
+
     for (let key in data) {
         num_pts++;
 
-        let location = data[key]
-        L.marker(location.coordinates, {
+        var icon_type;
 
+        let location = data[key]
+
+        L.marker(location.coordinates, {
+            icon: icon_map[location.status]
         }).bindPopup(`
             <span class="popup">
-                ${location.title}
+                ${location.title}<br>
+                Status: ${location.status}
             </span>
         `).addTo(map);
 

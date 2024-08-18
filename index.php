@@ -30,9 +30,12 @@ $faker = Faker\Factory::create()
 
   <!-- Test Header -->
   <div class="container-md">
-    <div class="row">
-      <div class="col-md-8">
-        <h1 class="text-center py-5">Bill's Bus Benches</h1>
+    <div class="row justify-content-center">
+      <div class="col-md-8 py-5">
+        <h1 class="">Bill's Bus Benches</h1>
+        <p class="text-secondary">
+          <!--Subtitle here?-->
+        </p>
       </div>
     </div>
   </div>
@@ -104,7 +107,7 @@ $faker = Faker\Factory::create()
           <!--<div class="display-2">About Us</div>
           <div class="display-5 text-muted">About Us</div>-->
           <p>
-            We are neighbors and builders who believe that the city of Milwaukee should be safe, accessible, and comfortable for everyone. A bench is the simplest step forward to make waiting for the bus more pleasant. No one should have to stand in the sun or snow just to get around the city.
+            We are neighbors and builders who believe that the city of Milwaukee should be safe, accessible, and comfortable for everyone. A bench is the simplest step forward to make waiting for the bus more pleasant. No one should have to stand for twenty minutes in the sun or snow just to get around the city.
           </p>
           <p>
             We believe in the value of shaping our own communities. That's why we have taken the construction of bus stop benches into our own hands.
@@ -118,9 +121,20 @@ $faker = Faker\Factory::create()
     <div class="container-lg pt-3">
       <div class="row justify-content-center">
         <div class="col-md-8">
-          <h2 class="text-center">Get Involved</h2>
+          <h2 class="text-center">Contact Us</h2>
           <p>
-            Want to get in touch with us? Want to join our team? Want to request a bench at a bus stop near you? You can email us at <strong>billsbusbenches@gmail.com</strong> and we'll get back to you as soon as possible!
+            The best way to get in touch with us is to send us an email at <a href="billsbusbenches@gmail.com">billsbusbenches@gmail.com</a>.
+          </p>
+          <h4>How can I get a bus bench near me?</h4>
+          <p>
+            We are working with neighborhood groups to get benches to the places in Milwaukee where people need them the most. If you would like to see bus benches installed in your neighborhood, we'd love for you to send us an email.
+          </p>
+          <h4>How can I help?</h4>
+          <p>
+            The best way you can help is by keeping an eye out for benches that might be damaged or missing. While we do our best to keep an eye on the benches we put out, Milwaukee is a big city, and we can't be everywhere at once. If you see a bench that has been broken or stolen, please send us an email. It really helps us out.
+          </p>
+          <p>
+            And if you'd like to join our team, we can use all the help we can get. We are a small team of volunteers, and as this project grows, we are going to need people to write grants, help make repairs, transport benches, and manage our website. We would love for you to be a part of this effort to make Milwaukee a more accessible place.
           </p>
         </div>
       </div>
@@ -139,6 +153,17 @@ $faker = Faker\Factory::create()
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact-button">
+    <div class="justify-content-end">
+      <div class="fixed-bottom justify-content-end align-end align-self-end">
+        <a class="btn btn-primary mx-5 my-5 rounded-pill" href="mailto:billsbusbenches@gmail.com">
+          <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px; color: rgb(255, 255, 255);"><path d="M21.75 1.5H2.25c-.828 0-1.5.672-1.5 1.5v12c0 .828.672 1.5 1.5 1.5h19.5c.828 0 1.5-.672 1.5-1.5V3c0-.828-.672-1.5-1.5-1.5zM15.687 6.975L19.5 10.5M8.313 6.975L4.5 10.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22.88 2.014l-9.513 6.56C12.965 8.851 12.488 9 12 9s-.965-.149-1.367-.426L1.12 2.014" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>  
+          Contact Us
+        </a>
       </div>
     </div>
   </section>

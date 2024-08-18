@@ -50,6 +50,21 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+
+/* Load custom markers */
+let broken_icon = L.icon({
+    iconUrl: "./assets/icons/icon1.png",
+    //shadowUrl: "",
+
+    iconSize:     [38, 38], // size of the icon (width, height)
+    //shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [19, 38], // point of the icon which will correspond to marker's location
+    //shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [1.5, -30] // point from which the popup should open relative to the iconAnchor
+});
+
+
+
 /* Read marker data from file */
 const marker_JSON_data = getJSONFile("./locations.json");
 
@@ -86,3 +101,16 @@ marker_JSON_data.then((data) => {
 
     // TODO: Set zoom automatically based on the points.
 })
+
+//L.marker(
+//    [43.00604935035454, -87.90759136368332],
+//    {
+//        icon: broken_icon
+//    }
+//).bindPopup(
+//    `
+//    <span class="popup">
+//        TESTING
+//    </span>
+//    `
+//).addTo(map);

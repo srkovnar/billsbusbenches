@@ -104,7 +104,7 @@ $faker = Faker\Factory::create()
           <!--<div class="display-2">About Us</div>
           <div class="display-5 text-muted">About Us</div>-->
           <p>
-            We are neighbors and builders who believe that our city should be safe, accessible, and comfortable for everyone. A bench is the simplest step forward to make waiting for the bus more pleasant. No one should have to stand in the sun or snow just to get around the city.
+            We are neighbors and builders who believe that the city of Milwaukee should be safe, accessible, and comfortable for everyone. A bench is the simplest step forward to make waiting for the bus more pleasant. No one should have to stand in the sun or snow just to get around the city.
           </p>
           <p>
             We believe in the value of shaping our own communities. That's why we have taken the construction of bus stop benches into our own hands.

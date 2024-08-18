@@ -1,10 +1,42 @@
 {
-    "alpha": {
-        "coordinates": [42.997940039191164, -87.90039383593492],
-        "title": "Honeypie cafe"
+    "35th and North": {
+        "coordinates": [43.0607647616709, -87.95770295192429],
+        "title": "35th and North",
+        "status": "broken"
     },
-    "beta": {
-        "coordinates": [43.00495220704743, -87.9056207955932],
-        "title": "The park"
+    "35th and Lisbon": {
+        "coordinates": [43.054783544046295, -87.95775363703311],
+        "title": "35th and Lisbon",
+        "status": "missing"
+    },
+    "13th and Cleveland": {
+        "coordinates": [42.99564062050976, -87.92870774882464],
+        "title": "13th and Cleveland",
+        "status": "active"
+    },
+    "6th and Rosedale": {
+        "coordinates": [42.99431660255043, -87.91885391999573],
+        "title": "6th and Rosedale",
+        "status": "active"
+    },
+    "Packard and Badger": {
+        "coordinates": [42.92769674168657, -87.86032339776982],
+        "title": "Packard and Badger",
+        "status": "active"
+    },
+    "Garfield and Humboldt": {
+        "coordinates": [43.05874132848234, -87.89788186144735],
+        "title": "Garfield and Humboldt",
+        "status": "active"
+    },
+    "Water and St. Paul": {
+        "coordinates": [43.03467137546226, -87.9087088486897],
+        "title": "Water and St. Paul",
+        "status": "active"
+    },
+    "60th and Wright": {
+        "coordinates": [43.064538603762045, -87.98762205481903],
+        "title": "68th and Wright (Southbound)",
+        "status": "active"
     }
 }

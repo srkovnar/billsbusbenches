@@ -125,11 +125,11 @@ $faker = Faker\Factory::create()
           <p>
             The best way to get in touch with us is to send us an email at <a href="billsbusbenches@gmail.com">billsbusbenches@gmail.com</a>.
           </p>
-          <h4>How can I get a bus bench near me?</h4>
+          <h4 class="pt-3">How can I get a bus bench near me?</h4>
           <p>
             We are working with neighborhood groups to get benches to the places in Milwaukee where people need them the most. If you would like to see bus benches installed in your neighborhood, we'd love for you to send us an email.
           </p>
-          <h4>How can I help?</h4>
+          <h4 class="pt-3">How can I help?</h4>
           <p>
             The best way you can help is by keeping an eye out for benches that might be damaged or missing. While we do our best to keep an eye on the benches we put out, Milwaukee is a big city, and we can't be everywhere at once. If you see a bench that has been broken or stolen, please send us an email. It really helps us out.
           </p>

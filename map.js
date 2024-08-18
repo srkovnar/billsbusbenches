@@ -123,6 +123,8 @@ marker_JSON_data.then((data) => {
         "missing": icon_yellow
     };
 
+    let map_bounds = L.latLngBounds();
+
     for (let key in data) {
         num_pts++;
 
@@ -141,27 +143,17 @@ marker_JSON_data.then((data) => {
 
         lat_sum += location.coordinates[0];
         lng_sum += location.coordinates[1];
+
+        map_bounds.extend(location.coordinates);
     }
 
     // Set view to the average of all of the points.
     let lat_avg = lat_sum / num_pts;
     let lng_avg = lng_sum / num_pts;
     map.setView([lat_avg, lng_avg], 13); // 13 is the zoom.
+    
+    // Set map bounds to include all points, plus a padding of 0.5.
+    map.fitBounds(map_bounds.pad(0.5));
 
     console.log("Points successfully loaded to map.");
-
-    // TODO: Set zoom automatically based on the points.
-})
-
-//L.marker(
-//    [43.00604935035454, -87.90759136368332],
-//    {
-//        icon: broken_icon
-//    }
-//).bindPopup(
-//    `
-//    <span class="popup">
-//        TESTING
-//    </span>
-//    `
-//).addTo(map);
+});

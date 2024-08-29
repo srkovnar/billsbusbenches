@@ -37,6 +37,7 @@
     "60th and Wright": {
         "coordinates": [43.064538603762045, -87.98762205481903],
         "title": "68th and Wright (Southbound)",
-        "status": "active"
+        "status": "missing",
+        "updated": "2024-08-28"
     }
 }

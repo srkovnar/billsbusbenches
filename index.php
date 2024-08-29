@@ -82,12 +82,11 @@ $faker = Faker\Factory::create()
   <section id="quote">
     <div class="container-sm">
       <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6">
           <figure class="text-center p-5">
             <blockquote class="blockquote">
               <p>
-                I was thinking we could put a quote from Bill Sell here.
-                One of the ones we used on the benches.
+                We crave the simple: benches, shade, rest, comfort, thoughtfulness, and breathing.
               </p>
             </blockquote>
             <figcaption class="blockquote-footer">

@@ -13,7 +13,6 @@ $faker = Faker\Factory::create()
   Future try:
   - the tiny text stack.
   - Try using petite-vue JS framework
-  - Try using bootstrap CSS framework
   - ionic for mobile apps
   - Cloud firestore for database? Plus firebase for authentication.
   -->
@@ -79,10 +78,13 @@ $faker = Faker\Factory::create()
   </nav>
 
   <!-- Main Content -->
+  <img src="./assets/images/bus_bench_build_1_cropped.png" alt="One of our bus bench builds" class="img-fluid">
+  <!-- TODO: When I have more images, use Bootstrap's "Carousel" feature to cycpe through. -->
+
   <section id="quote">
     <div class="container-sm">
       <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-6 maintxt">
           <figure class="text-center p-5">
             <blockquote class="blockquote">
               <p>
@@ -141,18 +143,33 @@ $faker = Faker\Factory::create()
   </section>
 
   <section id="mapsection">
-    <div class="container-xl pt-3">
+    <div class="container-xl py-3">
       <div class="row justify-content-center">
         <div class="col-md-8 bg-primary">
           <h2 class="text-center pt-3 text-white">Current Bench Locations</h2>
           <div>
-            <div class="map justify-content-center" id="map"><!--This id must match the map's id in the js file-->
+            <div class="map justify-content-center py-3" id="map"><!--This id must match the map's id in the js file-->
               <script src="locations.json"></script>
               <script type="text/javascript" src="map.js"></script>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="footer">
+    <div class="container-xl">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Back to Top</a></li>
+          <!-- <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li> -->
+        </ul>
+        <p class="text-center text-muted">&copy; 2024 Bill's Bus Benches</p>
+      </footer>
     </div>
   </section>
 

@@ -1,14 +1,15 @@
 <?php
   require('vendor/autoload.php');
+  
+  // Fetch bench location data from JSON file in a non-public directory (see README for details)
+  $bench_location_json_path = "../benches.json";
+  $bench_location_contents = file_get_contents("../benches.json");
+  $results = json_decode($bench_location_contents, true);
+
   $faker = Faker\Factory::create()
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  <!--Leaflet stylesheet-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    
-  <!--Leaflet script library or something-->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <!--
   Future try:
@@ -21,14 +22,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bill's Bus Benches</title>
-  <link rel="stylesheet" href = "custom.css">
 
+  <!-- Bootstrap stylesheet -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-<body>
+
+  <!-- Boostrap script -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-  <!-- Test Header -->
+  <!--Leaflet stylesheet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    
+  <!--Leaflet script -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Style for the map box on this page -->
+  <link rel="stylesheet" href="custom.css">
+</head>
+<body>
+  <!-- Inject bench locations from PHP into javascript variable -->
+  <?php
+    echo "<script>const locations = " . json_encode($results) . ";</script>";
+  ?>
+
+
+  <!-- Main Title (above navbar) -->
   <div class="container-md">
     <div class="row justify-content-center">
       <div class="col-md-8 py-5">
@@ -151,7 +168,7 @@
           <div>
             <div class="map justify-content-center py-3" id="map"><!--This id must match the map's id in the js file-->
               <script src="locations.json"></script>
-              <script type="text/javascript" src="map.js"></script>
+              <script type="text/javascript" src="mapbuild.js"></script>
             </div>
           </div>
         </div>

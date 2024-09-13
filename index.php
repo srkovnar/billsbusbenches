@@ -1,6 +1,6 @@
 <?php
   require('vendor/autoload.php');
-  
+
   // Fetch bench location data from JSON file in a non-public directory (see README for details)
   $bench_location_json_path = "../benches.json";
   $bench_location_contents = file_get_contents("../benches.json");
@@ -167,7 +167,6 @@
           <h2 class="text-center pt-3 text-white">Current Bench Locations</h2>
           <div>
             <div class="map justify-content-center py-3" id="map"><!--This id must match the map's id in the js file-->
-              <script src="locations.json"></script>
               <script type="text/javascript" src="mapbuild.js"></script>
             </div>
           </div>

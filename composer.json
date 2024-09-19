@@ -8,6 +8,7 @@
         }
     ],
     "require": {
-        "fakerphp/faker": "^1.23"
+        "fakerphp/faker": "^1.23",
+        "twbs/bootstrap": "^5.3"
     }
 }

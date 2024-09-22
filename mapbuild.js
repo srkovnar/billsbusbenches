@@ -83,7 +83,8 @@ let num_pts = 0;
 let icon_map = {
     "active": icon_blue,
     "broken": icon_red,
-    "missing": icon_yellow
+    "missing": icon_yellow,
+    "planned": icon_gray
 };
 
 let map_bounds = L.latLngBounds();

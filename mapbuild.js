@@ -95,14 +95,39 @@ for (let key in locations) {
 
   let location = locations[key]
   let coordinates = [location.latitude, location.longitude];
+
+  /* Create popup text based on available information in the JSON info file */
+  let popup_text = `<span class="popup">`;
+  
+  if (location.name) {
+    if (location.direction) {
+      popup_text += `${location.name} (${location.direction})<br>`;
+    }
+    else {
+      popup_text += `${location.name}<br>`;
+    }
+  }
+  if (location.stop_id) {
+    popup_text += `Stop #${location.stop_id}<br>`;
+  }
+  if (location.status) {
+    popup_text += `Status: ${location.status}<br>`;
+  }
+  if (location.updated && (location.status != "planned")) {
+    popup_text += `<br>Last checked: ${location.updated}<br>`;
+  }
+
+  popup_text += "</span>";
+
+  //if (location.image) {
+  //  popup_text += `
+  //    <br><img src="${location.image.src}" height="${location.image.height}" width="${location.image.width}"></img>
+  //  `;
+  //}
+
   L.marker(coordinates, {
     icon: icon_map[location.status]
-  }).bindPopup(`
-    <span class="popup">
-      ${location.name}<br>
-      Status: ${location.status}
-    </span>
-  `).addTo(map);
+  }).bindPopup(popup_text).addTo(map);
 
   lat_sum += coordinates[0];
   lng_sum += coordinates[1];

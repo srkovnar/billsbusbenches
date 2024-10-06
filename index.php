@@ -161,15 +161,31 @@
   </section>
 
   <section id="mapsection">
-    <div class="container-xl py-3">
-      <div class="row justify-content-center">
-        <div class="col-md-8 bg-primary">
-          <h2 class="text-center pt-3 text-white">Current Bench Locations</h2>
+    <div class="container-xl py-3 bg-primary">
+      <div class="row bg-primary justify-content-center">
+        <h2 class="text-center pt-3 text-white">Current Bench Locations</h2>
+        <div class="col-md-8">
           <div>
             <div class="map justify-content-center py-3" id="map"><!--This id must match the map's id in the js file-->
               <script type="text/javascript" src="mapbuild.js"></script>
             </div>
           </div>
+        </div>
+        <div class="col-md-3 py-3 my-5 bg-white">
+          <h3 class="text-center">Key</h3>
+          <p>
+            <img src="./assets/icons/icon_blue.png" width="20" height="20">
+            Active bench <br>(bench is in place and not broken)
+            <br>
+            <img src="./assets/icons/icon_red.png" width="20" height="20">
+            Bench is broken
+            <br>
+            <img src="./assets/icons/icon_yellow.png" width="20" height="20">
+            Bench is missing
+            <br>
+            <img src="./assets/icons/icon_gray.png" width="20" height="20">
+            Planned future benches
+          </p>
         </div>
       </div>
     </div>

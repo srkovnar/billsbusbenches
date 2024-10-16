@@ -15,12 +15,30 @@
  *      - There may be extra fields, but they are not required
  */
 
-/* Initialize map */
-let map = L.map('map');
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+// You don't have to do tileLayers this way; I'm doing it this way to make it easier to switch between layers and groups of pins.
+let osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+});
+
+let osm_hot = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors, Tiles style by Humanitarian OpenStreetMap Team hosted by OpenStreetMap France</a>'
+});
+
+/* Initialize map */
+let map = L.map('map', {
+  layers: [osm]
+});
+
+/* Initialize Layer Groups */
+let base_maps = {
+  "OpenStreetMaps": osm,
+  "OpenStreetMaps.HOT": osm_hot
+};
+
+/* Initialize Layer Manager */
+let layer_control = L.control.layers(base_maps).addTo(map);
 
 /* Load custom markers */
 let icon_red = L.icon({
@@ -79,12 +97,29 @@ let lat_sum = 0;
 let lng_sum = 0;
 let num_pts = 0;
 
+let bench_array_active = [];
+let bench_array_broken = [];
+let bench_array_missing = [];
+let bench_array_planned = [];
+
 /* Map bench statuses to icon colors */
 let icon_map = {
-    "active": icon_blue,
-    "broken": icon_red,
-    "missing": icon_yellow,
-    "planned": icon_gray
+    "active": {
+      "icon": icon_blue,
+      "layer_array": bench_array_active
+    },
+    "broken": {
+      "icon": icon_red,
+      "layer_array": bench_array_broken
+    },
+    "missing": {
+      "icon": icon_yellow,
+      "layer_array": bench_array_missing
+    },
+    "planned": {
+      "icon": icon_gray,
+      "layer_array": bench_array_planned
+    },
 };
 
 let map_bounds = L.latLngBounds();
@@ -125,9 +160,13 @@ for (let key in locations) {
   //  `;
   //}
 
-  L.marker(coordinates, {
-    icon: icon_map[location.status]
-  }).bindPopup(popup_text).addTo(map);
+  let newMarker = L.marker(coordinates, {
+    icon: icon_map[location.status].icon
+  })
+  .bindPopup(popup_text)
+  //.addTo(map);
+
+  icon_map[location.status].layer_array.push(newMarker)
 
   lat_sum += coordinates[0];
   lng_sum += coordinates[1];
@@ -143,4 +182,30 @@ map.setView([lat_avg, lng_avg], 13); // 13 is the zoom.
 // Set map bounds to include all points, plus a padding of 0.5.
 map.fitBounds(map_bounds.pad(0.5));
 
+bench_layer_active = L.layerGroup(bench_array_active).addTo(map);
+bench_layer_missing = L.layerGroup(bench_array_missing).addTo(map);
+bench_layer_broken = L.layerGroup(bench_array_broken).addTo(map);
+bench_layer_planned = L.layerGroup(bench_array_planned); // Do not show planned benches by default (it's too cluttered)
+
+layer_control.addOverlay(
+  bench_layer_active,
+  '<img src="./assets/icons/icon_blue.png" width="20" height="20">Active'
+);
+layer_control.addOverlay(
+  bench_layer_missing,
+  '<img src="./assets/icons/icon_red.png" width="20" height="20"></img>Missing'
+);
+layer_control.addOverlay(
+  bench_layer_broken,
+  '<img src="./assets/icons/icon_yellow.png" width="20" height="20"></img>Broken'
+);
+layer_control.addOverlay(
+  bench_layer_planned,
+  '<img src="./assets/icons/icon_gray.png" width="20" height="20"></img>Planned'
+);
+
+/* Add pin layers to map */
+layer_control.addTo(map);
+
+/* Display success message in console */
 console.log("Points successfully loaded to map.");

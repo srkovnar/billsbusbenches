@@ -97,28 +97,33 @@ let lat_sum = 0;
 let lng_sum = 0;
 let num_pts = 0;
 
-let bench_array_active = [];
-let bench_array_broken = [];
-let bench_array_missing = [];
-let bench_array_planned = [];
+/* Instantiate icon layers (empty by default; will be filled during the main loop) */
+let bench_layer_active  = L.layerGroup([]); // Locations of active benches
+let bench_layer_missing = L.layerGroup([]); // Locations of missing benches
+let bench_layer_broken  = L.layerGroup([]); // Locations of broken benches
+let bench_layer_planned = L.layerGroup([]); // Locations of planned benches
 
 /* Map bench statuses to icon colors */
 let icon_map = {
     "active": {
+      "stylized": "Active",
       "icon": icon_blue,
-      "layer_array": bench_array_active
+      "layer": bench_layer_active
     },
     "broken": {
+      "stylized": "Broken",
       "icon": icon_red,
-      "layer_array": bench_array_broken
+      "layer": bench_layer_broken
     },
     "missing": {
+      "stylized": "Missing",
       "icon": icon_yellow,
-      "layer_array": bench_array_missing
+      "layer": bench_layer_missing
     },
     "planned": {
+      "stylized": "Planned",
       "icon": icon_gray,
-      "layer_array": bench_array_planned
+      "layer": bench_layer_planned
     },
 };
 
@@ -160,13 +165,12 @@ for (let key in locations) {
   //  `;
   //}
 
-  let newMarker = L.marker(coordinates, {
+  L.marker(coordinates, {
     icon: icon_map[location.status].icon
   })
   .bindPopup(popup_text)
-  //.addTo(map);
-
-  icon_map[location.status].layer_array.push(newMarker)
+  //.addTo(map); // Add the new marker to the map
+  .addTo(icon_map[location.status].layer); // Add the new marker to the correct pin layer
 
   lat_sum += coordinates[0];
   lng_sum += coordinates[1];
@@ -174,37 +178,38 @@ for (let key in locations) {
   map_bounds.extend(coordinates);
 }
 
-// Set view to the average of all of the points.
+/* Set view to the average of all of the points. */
 let lat_avg = lat_sum / num_pts;
 let lng_avg = lng_sum / num_pts;
 map.setView([lat_avg, lng_avg], 13); // 13 is the zoom.
 
-// Set map bounds to include all points, plus a padding of 0.5.
+/* Set map bounds to include all points, plus a padding of 0.5. */
 map.fitBounds(map_bounds.pad(0.5));
 
-bench_layer_active = L.layerGroup(bench_array_active).addTo(map);
-bench_layer_missing = L.layerGroup(bench_array_missing).addTo(map);
-bench_layer_broken = L.layerGroup(bench_array_broken).addTo(map);
-bench_layer_planned = L.layerGroup(bench_array_planned); // Do not show planned benches by default (it's too cluttered)
-
+/* Add marker layers to map layer control (the little drop-down with the checkboxes) */
 layer_control.addOverlay(
   bench_layer_active,
   '<img src="./assets/icons/icon_blue.png" width="20" height="20">Active'
 );
 layer_control.addOverlay(
   bench_layer_missing,
-  '<img src="./assets/icons/icon_red.png" width="20" height="20"></img>Missing'
+  '<img src="./assets/icons/icon_yellow.png" width="20" height="20"></img>Missing'
 );
 layer_control.addOverlay(
   bench_layer_broken,
-  '<img src="./assets/icons/icon_yellow.png" width="20" height="20"></img>Broken'
+  `<img src="./assets/icons/icon_red.png" width="20" height="20"></img>Broken`
 );
 layer_control.addOverlay(
   bench_layer_planned,
   '<img src="./assets/icons/icon_gray.png" width="20" height="20"></img>Planned'
 );
 
-/* Add pin layers to map */
+/* Show default layers (put pin layers here that you wish to see by default when map loads) */
+bench_layer_active.addTo(map);
+bench_layer_missing.addTo(map);
+bench_layer_broken.addTo(map);
+
+/* Add pin layer control to map */
 layer_control.addTo(map);
 
 /* Display success message in console */

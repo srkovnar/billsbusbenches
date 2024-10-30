@@ -122,14 +122,15 @@
     <div class="container-lg pt-3">
       <div class="row justify-content-center">
         <div class="col-md-8"> <!--text-center text-md-start-->
-          <h2 class="text-center pt-3">About Us</h2>
-          <!--<div class="display-2">About Us</div>
-          <div class="display-5 text-muted">About Us</div>-->
+          <!-- <h2 class="text-center pt-3">About Us</h2> -->
+          <div class="display-5 text-center py-3">About Us</div>
+          <!-- <div class="display-5 text-muted">About Us</div> -->
           <p>
-            We are neighbors and builders who believe that the city of Milwaukee should be safe, accessible, and comfortable for everyone. A bench is the simplest step forward to make waiting for the bus more pleasant. No one should have to stand for twenty minutes in the sun or snow just to get around the city.
+            We are neighbors and builders who believe that the city of Milwaukee should be safe, accessible, and comfortable for everyone. Across our city and county, hundreds of bus stops are little more than a sign on the side of a busy road, without shelter or a place to sit. They fail to provide even the barest minimum of accessibility. No one should have to stand for twenty minutes in the sun or snow just to get around the city.
           </p>
+          <!-- <h3 class="pt-3">Our Goal: One Hundred Benches</h3> -->
           <p>
-            We believe in the value of shaping our own communities. That's why we have taken the construction of bus stop benches into our own hands.
+            We believe in the value of shaping our own communities. That's why we have taken the construction of bus stop benches into our own hands. We are committing to building <br><b>one hundred benches</b> at bus stops across Milwaukee county.
           </p>
         </div>  
       </div>
@@ -140,13 +141,21 @@
     <div class="container-lg pt-3">
       <div class="row justify-content-center">
         <div class="col-md-8">
-          <h2 class="text-center">Contact Us</h2>
+          <!-- <h2 class="text-center">Contact Us</h2> -->
+          <div class="display-5 text-center py-3">Contact Us</div>
           <p>
-            The best way to get in touch with us is to send us an email at <a href="billsbusbenches@gmail.com">billsbusbenches@gmail.com</a>.
+            Whether you are a leader in your community, or a neighbor who believes in what we are doing, we need your help. The best way to get in touch with us is to send us an email at <a href="billsbusbenches@gmail.com">billsbusbenches@gmail.com</a>.
           </p>
+          <!-- <div class="justify-content-center">
+            <a class="btn btn-dark mx-5 my-5 rounded-pill" href="mailto:billsbusbenches@gmail.com">
+              <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px; color: rgb(255, 255, 255);"><path d="M21.75 1.5H2.25c-.828 0-1.5.672-1.5 1.5v12c0 .828.672 1.5 1.5 1.5h19.5c.828 0 1.5-.672 1.5-1.5V3c0-.828-.672-1.5-1.5-1.5zM15.687 6.975L19.5 10.5M8.313 6.975L4.5 10.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22.88 2.014l-9.513 6.56C12.965 8.851 12.488 9 12 9s-.965-.149-1.367-.426L1.12 2.014" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>  
+              Contact Us
+            </a>
+          </div> -->
+
           <h4 class="pt-3">How can I get a bus bench near me?</h4>
           <p>
-            We are working with neighborhood groups to get benches to the places in Milwaukee where people need them the most. If you would like to see bus benches installed in your neighborhood, we'd love for you to send us an email.
+            If you want a bench at a stop near you, all you have to do is contact us and we will get a bench out there as soon as we can. We are working with neighborhood associations and community groups to get benches to the places in Milwaukee where people need them the most. If you would like to see bus benches installed in your neighborhood, we'd love for you to send us an email.
           </p>
           <h4 class="pt-3">How can I help?</h4>
           <p>
@@ -161,10 +170,12 @@
   </section>
 
   <section id="mapsection">
-    <div class="container-xl py-3 bg-primary">
+    <!-- <div class="container-xl py-3 bg-primary"> -->
+    <div class="container-fluid py-3 bg-primary">
       <div class="row bg-primary justify-content-center">
-        <h2 class="text-center pt-3 text-white">Current Bench Locations</h2>
-        <div class="col-md-8">
+        <!-- <h2 class="text-center pt-3 text-white">Our Impact in Milwaukee</h2> -->
+        <div class="display-5 text-center py-3 text-white">Our Impact In Milwaukee</div>
+        <div class="col-md-6">
           <div>
             <div class="map justify-content-center py-3" id="map"><!--This id must match the map's id in the js file-->
               <script type="text/javascript" src="mapbuild.js"></script>
@@ -209,7 +220,7 @@
   <section id="contact-button">
     <div class="justify-content-end">
       <div class="fixed-bottom justify-content-end align-end align-self-end">
-        <a class="btn btn-primary mx-5 my-5 rounded-pill" href="mailto:billsbusbenches@gmail.com">
+        <a class="btn btn-dark mx-5 mb-5 rounded-pill" href="mailto:billsbusbenches@gmail.com">
           <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px; color: rgb(255, 255, 255);"><path d="M21.75 1.5H2.25c-.828 0-1.5.672-1.5 1.5v12c0 .828.672 1.5 1.5 1.5h19.5c.828 0 1.5-.672 1.5-1.5V3c0-.828-.672-1.5-1.5-1.5zM15.687 6.975L19.5 10.5M8.313 6.975L4.5 10.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22.88 2.014l-9.513 6.56C12.965 8.851 12.488 9 12 9s-.965-.149-1.367-.426L1.12 2.014" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>  
           Contact Us
         </a>

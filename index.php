@@ -44,7 +44,6 @@
     echo "<script>const locations = " . json_encode($results) . ";</script>";
   ?>
 
-
   <!-- Main Title (above navbar) -->
   <div class="container-md">
     <div class="row justify-content-center">
@@ -138,21 +137,25 @@
   </section>
 
   <section id="contact">
-    <div class="container-lg pt-3">
+    <div class="container-lg pt-3 pb-5">
       <div class="row justify-content-center">
         <div class="col-md-8">
           <!-- <h2 class="text-center">Contact Us</h2> -->
           <div class="display-5 text-center py-3">Contact Us</div>
           <p>
-            Whether you are a leader in your community, or a neighbor who believes in what we are doing, we need your help. The best way to get in touch with us is to send us an email at <a href="billsbusbenches@gmail.com">billsbusbenches@gmail.com</a>.
+            Whether you are a leader in your community, or a neighbor who believes in what we are doing, we need your help. The best way to get in touch with us is to send us an email at <a href="billsbusbenches@gmail.com">billsbusbenches@gmail.com</a>. <!--You can also fill out our contact form below, and we will get back to you as soon as possible.
           </p>
-          <!-- <div class="justify-content-center">
-            <a class="btn btn-dark mx-5 my-5 rounded-pill" href="mailto:billsbusbenches@gmail.com">
-              <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px; color: rgb(255, 255, 255);"><path d="M21.75 1.5H2.25c-.828 0-1.5.672-1.5 1.5v12c0 .828.672 1.5 1.5 1.5h19.5c.828 0 1.5-.672 1.5-1.5V3c0-.828-.672-1.5-1.5-1.5zM15.687 6.975L19.5 10.5M8.313 6.975L4.5 10.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22.88 2.014l-9.513 6.56C12.965 8.851 12.488 9 12 9s-.965-.149-1.367-.426L1.12 2.014" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>  
-              Contact Us
-            </a>
-          </div> -->
-
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-8 justify-content-center text-center">
+          <a class="btn btn-dark fs-4 mx-5 mb-3 px-4 py-2 rounded-pill" href="./contact.php">
+            Contact Us
+          </a> -->
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-8">
           <h4 class="pt-3">How can I get a bus bench near me?</h4>
           <p>
             If you want a bench at a stop near you, all you have to do is contact us and we will get a bench out there as soon as we can. We are working with neighborhood associations and community groups to get benches to the places in Milwaukee where people need them the most. If you would like to see bus benches installed in your neighborhood, we'd love for you to send us an email.
@@ -202,6 +205,31 @@
     </div>
   </section>
 
+  <section id="guides">
+    <div class="container-xl">
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <h2 class="display-5 text-center py-3">Guides</h2>
+          <p>
+            If you want to make a bench yourself, we've included a link to the design that we prefer to use. It's heavy enough to withstand the harsh Milwaukee weather, and comfortable enough for people with limited mobility.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-8 justify-content-center text-center">
+          <a class="btn btn-dark fs-4 mx-5 mb-3 px-4 py-2 rounded-pill" href="https://rogueengineer.com/diy-outdoor-bench-plans-with-back/">
+            View Guide
+          </a>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-8">
+          However, there are plenty of other designs out there, and we encourage you to pick one that fits your needs and your budget. The Chattanooga Urbanist Society has <a href="https://www.urbanistsociety.com/resources/">another design</a> that is also a great option: 
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="footer">
     <div class="container-xl">
       <footer class="py-3 my-4">
@@ -212,7 +240,7 @@
           <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li> -->
         </ul>
-        <p class="text-center text-muted">&copy; 2024 Bill's Bus Benches</p>
+        <p class="text-center text-muted">&copy; 2024 Bill's Bus Benches | billsbusbenches@gmail.com</p>
       </footer>
     </div>
   </section>

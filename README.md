@@ -79,3 +79,7 @@ Using **PHPMailer** will also allow you to test your stuff locally. As long as y
 Allegedly, you can use a Gmail address and Gmail's SMTP server. There are guides on how to do this, however many of them are out-of-date. I did try to do this initially, before I decided to just use Hostinger's SMTP server.
 
 You'll need to mess with your Gmail address's Google account settings. You will need to set up two-factor authentication in order to make the proper settings changes, since Google is really cracking down on that stuff now. I decided that was too much work and went back to the other plan of using my hosting service's SMTP server instead. That way I didn't have to deal with Google at all.
+
+## Known Bugs
+
+The navbar blocks the heading titles when you click on an anchor link. It's super irritating.

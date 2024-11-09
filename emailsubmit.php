@@ -6,54 +6,11 @@
     $config_raw = file_get_contents("../config.json");
     $config = json_decode($config_raw, true); // The "true" puts it in array mode
 
-
-    // Initialize PHPmail class
-
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
-
-    $mail = new PHPMailer(true); // true = throw an exception if there is a problem.
-
-    // Set up SMTP
-    $mail->isSMTP();
-    $mail->SMTPAuth = true; // You don't always need this, only if auth is required (not sure when that is)
-
-    // TODO: I'll need to do some gmail settings configuration to get this working.
-    // Something on the billsbusbenches gmail account.
-
-//    https://mailtrap.io/blog/phpmailer-gmail/
-
-    $mail->Host = "smtp.gmail.com";
-    $mail->SMTPSecure = 
-
-    // continue the tutorial from this point
-    // https://www.mailslurp.com/blog/phpmailer-tutorial
-
-    // Server settings 
-    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;    //Enable verbose debug output 
-    $mail->isSMTP();                            // Set mailer to use SMTP 
-    $mail->Host = $config["mail_gmail"]["server_address"];           // Specify main and backup SMTP servers 
-    $mail->SMTPAuth = true;                     // Enable SMTP authentication 
-    $mail->Username = $config["mail_gmail"]["emailDestination"];       // SMTP username 
-    $mail->Password = $config["mail_gmail"]["password"];         // SMTP password 
-    $mail->SMTPSecure = 'ssl';                  // Enable TLS encryption, `ssl` also accepted 
-    $mail->Port = 465;                          // TCP port to connect to 
- 
-    $mail->setFrom($_POST["email"]);
-    //echo $config["mail_gmail"]["emailDestination"];
-    $mail->addAddress($config["mail_gmail"]["emailDestination"]);
-
-// GMAIL info
-// smtp server: smtp.gmail.com
-// SMTP name: your full name
-// SMTP username: your full username
-// SMTP password: password for gmail
-
-
+    echo "Starting up...<br>";
+    
+    // Parse POST data
     // The global $_POST variable allows you to access the data sent with the POST method by name
     // To access the data sent with the GET method, you can use $_GET
-
-    // Parse POST data
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $name = $firstname . " " . $lastname;
@@ -61,41 +18,53 @@
     $emailFrom = $_POST['email'];
     $request = $_POST['reason'];
     $message = $_POST['message'];
-
-    //$subject = "AUTOMESSAGE: " . $emailFrom;
-    $mail->Subject = "AUTOMESSAGE: " . $emailFrom;
-
-// Mail body content 
-$bodyContent = '<h1>How to Send Email from Localhost using PHP by CodexWorld</h1>'; 
-$bodyContent .= '<p>This HTML email is sent from the localhost server using PHP by <b>CodexWorld</b></p>'; 
-$mail->Body    = $bodyContent; 
-
+    
+    // Create email
+    $subject = "AUTOMESSAGE: " . $emailFrom;
     $body = "FROM: " . $name . "\nEMAIL: " . $emailFrom . "\nREQUEST: " . $request . "\nMESSAGE:\n" . $message;
 
-    $body = wordwrap($body, 70);
+    // Initialize PHPmail class
+    echo "Loading mailer...<br>";
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
 
-    // //if($_POST['message']) {
-    // //    mail(
-    // //        "billsbusbenches@gmail.com",
-    // //        $subject,
-    // //        $body
-    // //    );
-    // //}
-// 
-    // $headers = "From: " . $emailFrom;
-// 
-    // mail($config->emailDestination, $subject, $body, $headers); // this won't work on localhost
-// 
-    // // Probably should use PHPMailer in the future instead of mail(). Future todo.
-    // header("Location: index.php?mailsend");
-// 
-    // // echo $body;
+    $mail = new PHPMailer(true); // true = throw an exception if there is a problem.
 
+    // Server settings 
+    $mail->isSMTP();                            // Set mailer to use SMTP
+    $mail->Host = $config["mail"]["smtp_server"]; // Specify main and backup SMTP servers 
+    $mail->SMTPDebug = 2; // Debug level (uncomment to show network activity)
+    
+    $mail->SMTPAuth = true; // Enable SMTP authentication 
+    $mail->Username = $config["mail"]["smtp_username"]; // This is SPECIFICALLY for logging into the SMTP server. This usually will match the address you're sending to, but it doesn't have to! You can set the destination address to anything you want.
+    $mail->Password = $config["mail"]["smtp_password"]; // Again, this is for logging into the SMTP server. Your email will not send if your password is incorrect.
+    
+    $mail->SMTPSecure = 'ssl';                  // Enable TLS encryption, `ssl` also accepted 
+    // ^ Try TLS encryption once I'm confident.
+    
+    $mail->Port = 465;                          // TCP port to connect to 
+    $mail->addReplyTo($emailFrom, $name);       // The address that it should *look* like the email is coming from.
+    $mail->setFrom($config["mail"]["smtp_username"]); // The address that you are ACTUALLY sending the email from.
+    /* After further reading, it seems like the setFrom address must 
+     * be within the SMTP server you are using. So, if you want to make 
+     * it look like it came from someone else, you have to use addReplyTo. 
+     * Otherwise it will be rejected with an error message like this:
+     * 
+     * Sender address rejected: not owned by user sample@email.com
+     */
 
+    $mail->addAddress($config["mail"]["destination"]); // This is where you set the destination for where the email is going
+
+    // Email content
+    $mail->isHTML(false); // Set true if email body uses HTML format
+    $mail->Subject  = "AUTOMESSAGE: " . $emailFrom;
+    $mail->Body     = $body;
+
+    echo "Sending...<br>";
 
     // Send email 
-if(!$mail->send()) { 
-    echo 'Message could not be sent. Mailer Error: '.$mail->ErrorInfo; 
-} else { 
-    echo 'Message has been sent.'; 
-}
+    if(!$mail->send()) {
+        echo 'Message could not be sent. Mailer Error: '.$mail->ErrorInfo; 
+    } else {
+        echo 'Message has been sent.'; 
+    }

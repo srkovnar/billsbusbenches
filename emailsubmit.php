@@ -60,11 +60,11 @@
   $mail->Body     = $body;
 
   // Send email 
-  //if(!$mail->send()) {
-  //    echo 'Message could not be sent. Mailer Error: '.$mail->ErrorInfo; 
-  //} else {
-  //    echo 'Message has been sent.'; 
-  //}
+  if(!$mail->send()) {
+      echo 'Message could not be sent. Mailer Error: '.$mail->ErrorInfo; 
+  } else {
+      echo 'Message has been sent.'; 
+  }
 
   //header("Location: index.php");
 ?>

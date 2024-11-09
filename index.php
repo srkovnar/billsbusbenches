@@ -3,7 +3,7 @@
 
   // Fetch bench location data from JSON file in a non-public directory (see README for details)
   $bench_location_json_path = "../benches.json";
-  $bench_location_contents = file_get_contents("../benches.json");
+  $bench_location_contents = file_get_contents($bench_location_json_path);
   $results = json_decode($bench_location_contents, true);
 
   $faker = Faker\Factory::create()
@@ -57,7 +57,7 @@
   </div>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
     <!-- navbar-expand-md means the navbar should expand to fill if screen is larger than medium-sized. Otherwise, put the buttons in a hamburger. -->
     <div class="container-xxl">
       <!-- Main title with link -->
@@ -83,10 +83,16 @@
             <a href="#about" class="nav-link">About</a>
           </li>
           <li>
-            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#get-involved" class="nav-link">Get Involved</a>
           </li>
           <li>
             <a href="#mapsection" class="nav-link">Map</a>
+          </li>
+          <li>
+            <a href="#guides" class="nav-link">Guides</a>
+          </li>
+          <li>
+            <a href="#contact" class="nav-link">Contact</a>
           </li>
         </ul>
       </div>
@@ -120,10 +126,8 @@
   <section id="about">
     <div class="container-lg pt-3">
       <div class="row justify-content-center">
-        <div class="col-md-8"> <!--text-center text-md-start-->
-          <!-- <h2 class="text-center pt-3">About Us</h2> -->
+        <div class="col-md-10 col-lg-8"> <!--text-center text-md-start-->
           <div class="display-5 text-center py-3">About Us</div>
-          <!-- <div class="display-5 text-muted">About Us</div> -->
           <p>
             We are neighbors and builders who believe that the city of Milwaukee should be safe, accessible, and comfortable for everyone. Across our city and county, hundreds of bus stops are little more than a sign on the side of a busy road, without shelter or a place to sit. They fail to provide even the barest minimum of accessibility. No one should have to stand for twenty minutes in the sun or snow just to get around the city.
           </p>
@@ -136,26 +140,18 @@
     </div>
   </section>
 
-  <section id="contact">
+  <section id="get-involved">
     <div class="container-lg pt-3 pb-5">
       <div class="row justify-content-center">
-        <div class="col-md-8">
-          <!-- <h2 class="text-center">Contact Us</h2> -->
-          <div class="display-5 text-center py-3">Contact Us</div>
+        <div class="col-md-10 col-lg-8">
+          <h1 class="display-5 text-center py-3">Get Involved</h1>
           <p>
-            Whether you are a leader in your community, or a neighbor who believes in what we are doing, we need your help. The best way to get in touch with us is to send us an email at <a href="billsbusbenches@gmail.com">billsbusbenches@gmail.com</a>. <!--You can also fill out our contact form below, and we will get back to you as soon as possible.
+            Whether you are a leader in your community, or a neighbor who believes in what we are doing, we need your help. The best way to get in touch with us is to fill out our <b>contact form at the bottom of this page</b>. You can also send us an email at <a href="billsbusbenches@gmail.com">billsbusbenches@gmail.com</a>.
           </p>
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-8 justify-content-center text-center">
-          <a class="btn btn-dark fs-4 mx-5 mb-3 px-4 py-2 rounded-pill" href="./contact.php">
-            Contact Us
-          </a> -->
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-8">
+        <div class="col-md-10 col-lg-8">
           <h4 class="pt-3">How can I get a bus bench near me?</h4>
           <p>
             If you want a bench at a stop near you, all you have to do is contact us and we will get a bench out there as soon as we can. We are working with neighborhood associations and community groups to get benches to the places in Milwaukee where people need them the most. If you would like to see bus benches installed in your neighborhood, we'd love for you to send us an email.
@@ -177,7 +173,7 @@
     <div class="container-fluid py-3 bg-primary">
       <div class="row bg-primary justify-content-center">
         <!-- <h2 class="text-center pt-3 text-white">Our Impact in Milwaukee</h2> -->
-        <div class="display-5 text-center py-3 text-white">Our Impact In Milwaukee</div>
+        <h1 class="display-5 text-center py-3 text-white">Our Impact In Milwaukee</h1>
         <div class="col-md-6">
           <div>
             <div class="map justify-content-center py-3" id="map"><!--This id must match the map's id in the js file-->
@@ -206,27 +202,72 @@
   </section>
 
   <section id="guides">
-    <div class="container-xl">
+    <div class="container-xl pt-3 pb-5">
       <div class="row justify-content-center">
-        <div class="col-8">
-          <h2 class="display-5 text-center py-3">Guides</h2>
+        <div class="col-md-10 col-lg-8">
+          <h1 class="display-5 text-center py-3">Guides</h1>
           <p>
             If you want to make a bench yourself, we've included a link to the design that we prefer to use. It's heavy enough to withstand the harsh Milwaukee weather, and comfortable enough for people with limited mobility.
           </p>
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-8 justify-content-center text-center">
+        <div class="col-md-10 col-lg-8 justify-content-center text-center">
           <a class="btn btn-dark fs-4 mx-5 mb-3 px-4 py-2 rounded-pill" href="https://rogueengineer.com/diy-outdoor-bench-plans-with-back/">
             View Guide
           </a>
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-8">
+        <div class="col-md-10 col-lg-8">
           However, there are plenty of other designs out there, and we encourage you to pick one that fits your needs and your budget. The Chattanooga Urbanist Society has <a href="https://www.urbanistsociety.com/resources/">another design</a> that is also a great option: 
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container-xl mt-3 mb-5">
+      <h1 class="display-5 text-center py-3">Contact Us</h1>
+      <!-- <form action="/formsubmit.php" method="POST"> -->
+      <form action="/emailsubmit.php" method="POST">
+        <div class="form-group row justify-content-center py-2">
+          <div class="col-sm-4 col-lg-4">
+            <label for="firstname">First Name*:</label>
+            <input class="form-control" name="firstname" id="firstname" required>
+          </div>
+          <div class="col-sm-4 col-lg-4">
+            <label for="lastname">Last Name:</label>
+            <input class="form-control" name="lastname" id="lastname">
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-8">
+            <div class="form-group py-2">
+              <label for="email">Email address*:</label>
+              <input class="form-control" name="email" type="email" id="email" required>
+            </div>
+            <div class="form-group py-2">
+              <label for="reason">Reason for reaching out (choose one)*</label>
+              <select class="form-control" name="reason" id="reason">
+                <option>Request a bench</option>
+                <option>Report a broken bench</option>
+                <option>Get involved</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group py-2">
+              <label for="message">Message*</label>
+              <textarea class="form-control" name="message" id="message" rows="3" required></textarea>
+            </div>
+          </div> 
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-8 justify-content-center text-center py-2">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </form> 
     </div>
   </section>
 
@@ -242,17 +283,6 @@
         </ul>
         <p class="text-center text-muted">&copy; 2024 Bill's Bus Benches | billsbusbenches@gmail.com</p>
       </footer>
-    </div>
-  </section>
-
-  <section id="contact-button">
-    <div class="justify-content-end">
-      <div class="fixed-bottom justify-content-end align-end align-self-end">
-        <a class="btn btn-dark mx-5 mb-5 rounded-pill" href="mailto:billsbusbenches@gmail.com">
-          <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px; color: rgb(255, 255, 255);"><path d="M21.75 1.5H2.25c-.828 0-1.5.672-1.5 1.5v12c0 .828.672 1.5 1.5 1.5h19.5c.828 0 1.5-.672 1.5-1.5V3c0-.828-.672-1.5-1.5-1.5zM15.687 6.975L19.5 10.5M8.313 6.975L4.5 10.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22.88 2.014l-9.513 6.56C12.965 8.851 12.488 9 12 9s-.965-.149-1.367-.426L1.12 2.014" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>  
-          Contact Us
-        </a>
-      </div>
     </div>
   </section>
 </body>

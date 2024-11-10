@@ -25,6 +25,24 @@ The general structure of the `benches.json` file should look like this:
 }
 ```
 
+## config.json
+
+I store all of my keys in here. The structure is this:
+
+```json
+{
+    "mail":
+    {
+        "smtp_server": "address.of.your.server.com",
+        "smtp_username": "username@email.com",
+        "smtp_password": "your_password",
+        "port": 465,
+        "security": "ssl",
+        "destination": "sample@email.com"
+    }
+}
+```
+
 # Development Notes and Attributions
 
 This website is built using Bootstrap CSS framework: [https://getbootstrap.com]
@@ -41,7 +59,19 @@ You'll also note that there are some files kept outside of this git repository. 
 
 There are also some asset files that I've left out. Whenever you find a missing image, just add your image where that path leads in the code. You're smart. Open VSCode and take a look.
 
-### Composer Libraries Used
+### File Structure
+
+```
+root
+|---billsbusbenches (git repository should be here)
+|   |---built-in assets
+|   |---source files
+|
+|---config.json (you need to create this)
+|---benches.json (you need to create this)
+```
+
+## Composer Libraries Used
 
 - `faker`
     - Used for debugging. (Honestly, I don't even really use this at all.)

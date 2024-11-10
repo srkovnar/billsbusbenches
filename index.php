@@ -232,17 +232,17 @@
       <!-- <form action="/formsubmit.php" method="POST"> -->
       <form action="/emailsubmit.php" method="POST">
         <div class="form-group row justify-content-center py-2">
-          <div class="col-sm-4 col-lg-4">
+          <div class="col-sm-6 col-md-4"> <!-- Take up whole row up to "small" threshold -->
             <label for="firstname">First Name*:</label>
             <input class="form-control" name="firstname" id="firstname" required>
           </div>
-          <div class="col-sm-4 col-lg-4">
+          <div class="col-sm-6 col-md-4"> <!-- At "small" threshold, group with firstname -->
             <label for="lastname">Last Name:</label>
             <input class="form-control" name="lastname" id="lastname">
           </div>
         </div>
         <div class="row justify-content-center">
-          <div class="col-8">
+          <div class="col-md-8">
             <div class="form-group py-2">
               <label for="email">Email address*:</label>
               <input class="form-control" name="email" type="email" id="email" required>
@@ -253,6 +253,7 @@
                 <option>Request a bench</option>
                 <option>Report a broken bench</option>
                 <option>Get involved</option>
+                <option>Contribute materials</option>
                 <option>Other</option>
               </select>
             </div>
@@ -264,7 +265,7 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-8 justify-content-center text-center py-2">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary rounded-pill">Submit</button>
           </div>
         </div>
       </form> 

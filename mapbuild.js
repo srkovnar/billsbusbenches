@@ -40,57 +40,101 @@ let base_maps = {
 /* Initialize Layer Manager */
 let layer_control = L.control.layers(base_maps).addTo(map);
 
+/* Information about file, size, and alignment for all map icons by name */
+let icon_metadata = {
+  "icon_blue": {
+    "iconUrl": "./assets/icons/icon_blue.png",
+    "iconSize": [38, 38],
+    "iconAnchor": [19, 38],
+    "popupAnchor": [1.5, -30],
+    "icon": null
+  },
+  "icon_gray": {
+    "iconUrl": "./assets/icons/icon_gray.png",
+    "iconSize": [38, 38],
+    "iconAnchor": [19, 38],
+    "popupAnchor": [1.5, -30],
+    "icon": null
+  },
+  "icon_green": {
+    "iconUrl": "./assets/icons/icon_green.png",
+    "iconSize": [38, 38],
+    "iconAnchor": [19, 38],
+    "popupAnchor": [1.5, -30],
+    "icon": null
+  },
+  "icon_red": {
+    "iconUrl": "./assets/icons/icon_red.png",
+    "iconSize": [38, 38],
+    "iconAnchor": [19, 38],
+    "popupAnchor": [1.5, -30],
+    "icon": null
+  },
+  "icon_yellow": {
+    "iconUrl": "./assets/icons/icon_yellow.png",
+    "iconSize": [38, 38],
+    "iconAnchor": [19, 38],
+    "popupAnchor": [1.5, -30],
+    "icon": null
+  }
+}
+
 /* Load custom markers */
 let icon_red = L.icon({
-  iconUrl: "./assets/icons/icon_red.png",
+  iconUrl:      icon_metadata["icon_red"]["iconUrl"],
   //shadowUrl: "",
 
-  iconSize:     [38, 38], // size of the icon (width, height)
+  //iconSize:     [38, 38], // size of the icon (width, height)
+  iconSize:     icon_metadata["icon_red"]["iconSize"],
   //shadowSize:   [50, 64], // size of the shadow
-  iconAnchor:   [19, 38], // point of the icon which will correspond to marker's location
+  iconAnchor:   icon_metadata["icon_red"]["iconAnchor"], // point of the icon which will correspond to marker's location
   //shadowAnchor: [4, 62],  // the same for the shadow
-  popupAnchor:  [1.5, -30] // point from which the popup should open relative to the iconAnchor
+  popupAnchor:  icon_metadata["icon_red"]["popupAnchor"] // point from which the popup should open relative to the iconAnchor
 });
 let icon_yellow = L.icon({
-  iconUrl: "./assets/icons/icon_yellow.png",
+  iconUrl:      icon_metadata["icon_yellow"]["iconUrl"],
   //shadowUrl: "",
 
-  iconSize:     [38, 38], // size of the icon (width, height)
+  //iconSize:     [38, 38], // size of the icon (width, height)
+  iconSize:     icon_metadata["icon_yellow"]["iconSize"],
   //shadowSize:   [50, 64], // size of the shadow
-  iconAnchor:   [19, 38], // point of the icon which will correspond to marker's location
+  iconAnchor:   icon_metadata["icon_yellow"]["iconAnchor"], // point of the icon which will correspond to marker's location
   //shadowAnchor: [4, 62],  // the same for the shadow
-  popupAnchor:  [1.5, -30] // point from which the popup should open relative to the iconAnchor
+  popupAnchor:  icon_metadata["icon_yellow"]["popupAnchor"] // point from which the popup should open relative to the iconAnchor
 });
 let icon_blue = L.icon({
-  iconUrl: "./assets/icons/icon_blue.png",
+  iconUrl:      icon_metadata["icon_blue"]["iconUrl"],
   //shadowUrl: "",
 
-  iconSize:     [38, 38], // size of the icon (width, height)
+  iconSize:     icon_metadata["icon_blue"]["iconSize"],
   //shadowSize:   [50, 64], // size of the shadow
-  iconAnchor:   [19, 38], // point of the icon which will correspond to marker's location
+  iconAnchor:   icon_metadata["icon_blue"]["iconAnchor"], // point of the icon which will correspond to marker's location
   //shadowAnchor: [4, 62],  // the same for the shadow
-  popupAnchor:  [1.5, -30] // point from which the popup should open relative to the iconAnchor
+  popupAnchor:  icon_metadata["icon_blue"]["popupAnchor"] // point from which the popup should open relative to the iconAnchor
 });
 let icon_gray = L.icon({
-  iconUrl: "./assets/icons/icon_gray.png",
+  iconUrl:      icon_metadata["icon_gray"]["iconUrl"],
   //shadowUrl: "",
 
-  iconSize:     [38, 38], // size of the icon (width, height)
+  iconSize:     icon_metadata["icon_gray"]["iconSize"],
   //shadowSize:   [50, 64], // size of the shadow
-  iconAnchor:   [19, 38], // point of the icon which will correspond to marker's location
+  iconAnchor:   icon_metadata["icon_gray"]["iconAnchor"], // point of the icon which will correspond to marker's location
   //shadowAnchor: [4, 62],  // the same for the shadow
-  popupAnchor:  [1.5, -30] // point from which the popup should open relative to the iconAnchor
+  popupAnchor:  icon_metadata["icon_gray"]["popupAnchor"] // point from which the popup should open relative to the iconAnchor
 });
 let icon_green = L.icon({
-  iconUrl: "./assets/icons/icon_green.png",
+  iconUrl:      icon_metadata["icon_green"]["iconUrl"],
   //shadowUrl: "",
 
-  iconSize:     [38, 38], // size of the icon (width, height)
+  iconSize:     icon_metadata["icon_green"]["iconSize"],
   //shadowSize:   [50, 64], // size of the shadow
-  iconAnchor:   [19, 38], // point of the icon which will correspond to marker's location
+  iconAnchor:   icon_metadata["icon_green"]["iconAnchor"], // point of the icon which will correspond to marker's location
   //shadowAnchor: [4, 62],  // the same for the shadow
-  popupAnchor:  [1.5, -30] // point from which the popup should open relative to the iconAnchor
+  popupAnchor:  icon_metadata["icon_green"]["popupAnchor"] // point from which the popup should open relative to the iconAnchor
 });
+// TODO: Move all of the icon information into a metadata JSON file to be kept with the icons.
+// TODO: Git-ignore the icon folder, move the icon folder name into config.json
+// and create the list of icons dynamically.
 
 /* Add points to map from database results */
 let lat_sum = 0;
@@ -103,29 +147,54 @@ let bench_layer_missing = L.layerGroup([]); // Locations of missing benches
 let bench_layer_broken  = L.layerGroup([]); // Locations of broken benches
 let bench_layer_planned = L.layerGroup([]); // Locations of planned benches
 
-/* Map bench statuses to icon colors */
+/* Associations between bench statuses and map icons */
 let icon_map = {
-    "active": {
-      "stylized": "Active",
-      "icon": icon_blue,
-      "layer": bench_layer_active
-    },
-    "broken": {
-      "stylized": "Broken",
-      "icon": icon_red,
-      "layer": bench_layer_broken
-    },
-    "missing": {
-      "stylized": "Missing",
-      "icon": icon_yellow,
-      "layer": bench_layer_missing
-    },
-    "planned": {
-      "stylized": "Planned",
-      "icon": icon_gray,
-      "layer": bench_layer_planned
-    },
+  "active": {
+    "stylized": "Active",
+    "icon": icon_blue,
+    "layer": bench_layer_active,
+    "metadata": "icon_blue"
+  },
+  "broken": {
+    "stylized": "Needs repairs",
+    "icon": icon_yellow,
+    "layer": bench_layer_broken,
+    "metadata": "icon_yellow"
+  },
+  "missing": {
+    "stylized": "Missing",
+    "icon": icon_red,
+    "layer": bench_layer_missing,
+    "metadata": "icon_red"
+  },
+  "planned": {
+    "stylized": "Planned",
+    "icon": icon_gray,
+    "layer": bench_layer_planned,
+    "metadata": "icon_gray"
+  },
 };
+// TODO: Move all of this into a separate JSON file as well.
+// TODO: Create the icons dynamically based on their names.
+/* i.e.:
+ *  "planned": {
+ *    "stylized": "Planned",
+ *    "icon": L.icon{
+ *      "iconUrl": icon_metadata[icon_status_map["planned"]]["iconUrl"]
+ *      ...
+ *    },
+ *    "layer": bench_layer_planned,
+ *    "metadata": "icon_gray"
+ *  }
+ * Or something like that.
+ * 
+ * You would need three separate structures:
+ * 1) A JSON of all the icon metadata indexed by a name string
+ * 2) A JSON connecting each bench status to an icon name string, not an icon object.
+ * 3) A list of all the statuses containing the generated icon object.
+ *    - The icon objects can be generated in a loop and filled in later.
+ *    - Icons would only exist if linked to a status.
+ */
 
 let map_bounds = L.latLngBounds();
 for (let key in locations) {
@@ -189,19 +258,19 @@ map.fitBounds(map_bounds.pad(0.5));
 /* Add marker layers to map layer control (the little drop-down with the checkboxes) */
 layer_control.addOverlay(
   bench_layer_active,
-  '<img src="./assets/icons/icon_blue.png" width="20" height="20">Active'
+  `<img src=${icon_metadata[icon_map["active"]["metadata"]]["iconUrl"]} width="20" height="20">Active`
 );
 layer_control.addOverlay(
   bench_layer_missing,
-  '<img src="./assets/icons/icon_yellow.png" width="20" height="20"></img>Missing'
+  `<img src=${icon_metadata[icon_map["missing"]["metadata"]]["iconUrl"]} width="20" height="20"></img>Missing`
 );
 layer_control.addOverlay(
   bench_layer_broken,
-  `<img src="./assets/icons/icon_red.png" width="20" height="20"></img>Broken`
+  `<img src=${icon_metadata[icon_map["broken"]["metadata"]]["iconUrl"]} width="20" height="20"></img>Broken`
 );
 layer_control.addOverlay(
   bench_layer_planned,
-  '<img src="./assets/icons/icon_gray.png" width="20" height="20"></img>Planned'
+  `<img src=${icon_metadata[icon_map["planned"]["metadata"]]["iconUrl"]} width="20" height="20"></img>Planned`
 );
 
 /* Show default layers (put pin layers here that you wish to see by default when map loads) */

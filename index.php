@@ -187,10 +187,10 @@
             <img src="./assets/icons/icon_blue.png" width="20" height="20">
             Active bench <br>(bench is in place and not broken)
             <br>
-            <img src="./assets/icons/icon_red.png" width="20" height="20">
-            Bench is broken
-            <br>
             <img src="./assets/icons/icon_yellow.png" width="20" height="20">
+            Bench is in need of repairs
+            <br>
+            <img src="./assets/icons/icon_red.png" width="20" height="20">
             Bench is missing
             <br>
             <img src="./assets/icons/icon_gray.png" width="20" height="20">

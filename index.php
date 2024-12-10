@@ -272,6 +272,28 @@
     </div>
   </section>
 
+  <section id="supporters">
+    <div class="container-xl">
+      <div class="row text-center justify-content-center">
+        <div class="col-md-10 col-lg-8">
+          <h1 class="display-5 text-center py-3">Our supporters</h1>
+        </div>
+      </div>
+      <div class="row text-center justify-content-center">
+        <div class="col-md-10 col-lg-8">
+          <img src="./assets/bliffert.png" alt="Logo for Bliffert Co., one of our sponsors" class="img-fluid mx-5 mb-3 px-4 py-2">
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8">
+          <p>
+            Thank you to Bliffert for donating lumber to contribute to our bench-building efforts! Thanks to them, we have been able to replace some of our original benches with a sturdier design, as well as expand to new locations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="footer">
     <div class="container-xl">
       <footer class="py-3 my-4">

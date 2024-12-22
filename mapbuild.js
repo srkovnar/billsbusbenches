@@ -228,11 +228,11 @@ for (let key in locations) {
 
   popup_text += "</span>";
 
-  //if (location.image) {
-  //  popup_text += `
-  //    <br><img src="${location.image.src}" height="${location.image.height}" width="${location.image.width}"></img>
-  //  `;
-  //}
+  if (location.image) {
+    popup_text += `
+      <br><img src="${location.image.src}" height="${location.image.height}" width="${location.image.width}"></img>
+    `;
+  }
 
   L.marker(coordinates, {
     icon: icon_map[location.status].icon

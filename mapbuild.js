@@ -229,9 +229,9 @@ for (let key in locations) {
   popup_text += "</span>";
 
   if (location.image) {
-    popup_text += `
-      <br><img src="${location.image.src}" height="${location.image.height}" width="${location.image.width}"></img>
-    `;
+    // Add image to map popup.
+    // Cast the image to "fluid" type (provided by Bootstrap) to get it to fit the popup window.
+    popup_text += `<br><img src="${location.image}" class="img-fluid"></img>`;
   }
 
   L.marker(coordinates, {

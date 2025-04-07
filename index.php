@@ -80,6 +80,9 @@
       <div class="collapse navbar-collapse justify-content-center align-center" id="main-nav">
         <ul class="navbar-nav">
           <li class="nav-item">
+            <a href="#support-us" class="nav-link">Donate</a>
+          </li>
+          <li class="nav-item">
             <a href="#about" class="nav-link">About</a>
           </li>
           <li>
@@ -118,6 +121,30 @@
               <cite title="Bill Sell">Bill Sell</cite>
             </figcaption>
           </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="support-us">
+    <div class="container-lg pt-3 pb-3">
+      <div class="row justify-content-center text-center">
+        <div class="col-md-10 col-lg-8">
+          <div class="display-5 text-center py-3">Support Our Work</div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8">
+          <p>
+            Any contributions go directly towards purchasing materials for our benches. Every little bit counts towards making Milwaukee a more accessible place.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center text-center">
+        <div class="col-md-10 col-lg-8">
+          <a class="btn btn-primary fs-4 mx-5 mb-3 px-4 py-2 rounded-pill" href="https://paypal.me/BillsBusBenches">
+            Donate
+          </a>
         </div>
       </div>
     </div>

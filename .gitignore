@@ -1,3 +1,6 @@
+# Ignore NodeJS and composer libraries
 vendor
+node_modules
+
+# Don't commit your keys to main
 config.json
-localimages

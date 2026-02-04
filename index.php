@@ -2,7 +2,7 @@
   require('vendor/autoload.php');
 
   // Fetch bench location data from JSON file in a non-public directory (see README for details)
-  $bench_location_json_path = "../benches.json";
+  $bench_location_json_path = "./benches.json";
   $bench_location_contents = file_get_contents($bench_location_json_path);
   $results = json_decode($bench_location_contents, true);
 
@@ -308,7 +308,7 @@
       </div>
       <div class="row text-center justify-content-center">
         <div class="col-md-10 col-lg-8">
-          <img src="./assets/bliffert.png" alt="Logo for Bliffert Co., one of our sponsors" class="img-fluid mx-5 mb-3 px-4 py-2">
+          <img src="./assets/images/logo__bliffert.png" alt="Logo for Bliffert Co., one of our sponsors" class="img-fluid mx-5 mb-3 px-4 py-2">
         </div>
       </div>
       <div class="row justify-content-center">

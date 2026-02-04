@@ -2,9 +2,54 @@
 
 Code for Bill's Bus Benches website
 
-# Non-Obvious Functionality
+# About The Code
 
-In order to load the map of benches, we need a JSON file `benches.json` to exist in the directory above this one. This is done to ensure that it is not part of the git repository, and can be manually edited at any time to update the map.
+## Setup
+
+Before you can run this code locally, you must install the following programs:
+
+- PHP
+- Composer (a library manager for PHP)
+- NodeJS
+- Node Package Manager (NPM) (a library manager for NodeJS)
+
+Run `composer install` to download all needed PHP libraries. These are needed to run the website.
+
+Run `npm i` to download all needed NodeJS libraries. Right now, these are only needed for development - you can skip this unless you plan on changing the stylesheet.
+
+## Attributions
+
+This website is built using Bootstrap CSS framework: [https://getbootstrap.com]
+
+The map is built with Leaflet.js ([https://leafletjs.com/])
+and uses OpenStreetMap map data ([https://www.openstreetmap.org]).
+
+## Directory Setup
+
+```
+project/
+├── assets/
+│   ├── benches/
+│   ├── icons/
+│   └── images/
+├── node_modules/ (for NodeJS libraries)
+├── vendor/ (for PHP composer libraries)
+├── assets/
+│   └── benches.json
+│
+├── .gitignore
+├── benches.json
+├── ...
+├── emailsubmit.php
+├── index.php
+├── mapbuild.js
+└── ...
+config.json (this should live outside of your public directory)
+```
+
+## Bench Data Format
+
+Bench data is stored in a JSON file, because I'm too broke to afford a proper database.
 
 The general structure of the `benches.json` file should look like this:
 
@@ -25,56 +70,21 @@ The general structure of the `benches.json` file should look like this:
 }
 ```
 
-## config.json
+## Future To-Do
 
-I store all of my keys in here. The structure is this:
+- Remove EXIF metadata from images to reduce size
+- Build a script to guide user through the setup process (bash or python or powershell maybe)
 
-```json
-{
-    "mail":
-    {
-        "smtp_server": "address.of.your.server.com",
-        "smtp_username": "username@email.com",
-        "smtp_password": "your_password",
-        "port": 465,
-        "security": "ssl",
-        "destination": "sample@email.com"
-    }
-}
-```
+### Images
 
-# Development Notes and Attributions
-
-This website is built using Bootstrap CSS framework: [https://getbootstrap.com]
-
-The map is built with Leaflet.js ([https://leafletjs.com/])
-and uses OpenStreetMap map data ([https://www.openstreetmap.org]).
+If we ever get to the point where the amount of images is too many to commit to Github, we should migrate to CDN image storage. We would just list the URL in `benches.json` instead of the path.
 
 ## Before development
 
-Before you can do anything, you must run `composer install` to install PHP dependencies.
-Honestly, this project doesn't really use them right now, but I'm leaving them in for now.
-
 You'll also note that there are some files kept outside of this git repository. Those are configuration files, and I'm not uploading them because they contain my keys. You'll need to make your own. They're mostly just JSON files.
-
-There are also some asset files that I've left out. Whenever you find a missing image, just add your image where that path leads in the code. You're smart. Open VSCode and take a look.
-
-### File Structure
-
-```
-root
-|---billsbusbenches (git repository should be here)
-|   |---built-in assets
-|   |---source files
-|
-|---config.json (you need to create this)
-|---benches.json (you need to create this)
-```
 
 ## Composer Libraries Used
 
-- `faker`
-    - Used for debugging. (Honestly, I don't even really use this at all.)
 - `bootstrap`
     - Used for Bootstrap theme customization.
 - `sendmail` (Github: [https://github.com/PHPMailer/PHPMailer])

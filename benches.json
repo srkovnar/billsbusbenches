@@ -1,0 +1,297 @@
+[
+    {
+        "stop_id": 5553,
+        "latitude": 43.068118489995165, 
+        "longitude": -87.98951254709755,
+        "name": "Center and 62nd",
+        "direction": "Westbound",
+        "status": "active",
+        "updated": "2025-01-09",
+        "repaired": "2024-12-18",
+        "image": "assets/benches/20250109__center_and_62nd.jpg"
+    },
+    {
+        "latitude": 43.06064724314721,
+        "longitude": -87.98765808933734,
+        "name": "60th and North",
+        "status": "missing"
+    },
+    {
+        "latitude": 43.0607647616709,
+        "longitude": -87.95770295192429,
+        "name": "35th and North",
+        "status": "broken"
+    },
+    {
+        "stop_id": 1243,
+        "latitude": 43.060070,
+        "longitude": -87.905211,
+        "name": "Holton and North",
+        "direction": "Northbound",
+        "status": "active",
+        "deployed": "2024-12-17",
+        "updated": "2024-12-17",
+        "seen": "2024-12-17",
+        "image": "assets/benches/20241217__holton_and_north.jpg"
+    },
+    {
+        "latitude": 43.054783544046295,
+        "longitude": -87.95775363703311,
+        "name": "35th and Lisbon",
+        "status": "missing"
+    },
+    {
+        "stop_id": 4711,
+        "latitude": 43.017053,
+        "longitude": -87.95782613509802,
+        "name": "35th and Greenfield",
+        "direction": "Southbound",
+        "status": "active",
+        "updated": "2024-11-06",
+        "version": 1
+    },
+    {
+        "stop_id": 4617,
+        "latitude": 43.016699,
+        "longitude": -87.957462,
+        "name": "35th and Greenfield",
+        "direction": "Northbound",
+        "status": "active",
+        "updated": "2024-11-06",
+        "version": 1
+    },
+    {
+        "stop_id": 1951,
+        "latitude": 42.999111,
+        "longitude": -87.928475,
+        "name": "13th and Arthur",
+        "direction": "Northbound",
+        "status": "planned"
+    },
+    {
+        "stop_id": 338,
+        "latitude": 42.995439868808084,
+        "longitude": -87.92853397257002,
+        "name": "13th and Cleveland",
+        "direction": "Northbound",
+        "status": "active",
+        "updated": "2025-01-09",
+        "deployed": "2024-12-07",
+        "image": "assets/benches/20250109__13th_and_cleveland.jpg"
+    },
+    {
+        "stop_id": 7201,
+        "latitude": 42.99431660255043,
+        "longitude": -87.91885391999573,
+        "name": "6th and Rosedale",
+        "direction": "Southbound",
+        "status": "active",
+        "updated": "2025-01-09",
+        "seen": "2024-10-16",
+        "repaired": "2024-12-07",
+        "image": "assets/benches/20250109__6th_and_rosedale.jpg"
+    },
+    {
+        "stop_id": 1470,
+        "latitude": 42.92769674168657,
+        "longitude": -87.86032339776982,
+        "name": "Packard and Badger",
+        "direction": "Southbound",
+        "status": "active",
+        "updated": "2025-01-09",
+        "maintenance": "2024-11-10",
+        "image": "assets/benches/20240912__packard_and_badger.jpg"
+    },
+    {
+        "stop_id": 4470,
+        "latitude": 43.05874132848234,
+        "longitude": -87.89788186144735,
+        "name": "Garfield and Humboldt",
+        "direction": "Southbound",
+        "status": "active",
+        "updated": "2025-01-09",
+        "image": "assets/benches/20250109__garfield_and_humboldt.jpg"
+    },
+    {
+        "stop_id": 4218,
+        "latitude": 43.056948,
+        "longitude": -87.888651,
+        "name": "Farwell and Lafayette",
+        "direction": "Southbound",
+        "status": "active",
+        "updated": "2024-12-17",
+        "deployed": "2024-12-17",
+        "seen": "2024-12-17",
+        "image": "assets/benches/20241217__farwell_and_lafayette.jpg"
+    },
+    {
+        "stop_id": 731,
+        "latitude": 43.03237752772336,
+        "longitude": -87.90925194726573,
+        "name": "Water and Chicago",
+        "direction": "Northbound",
+        "status": "planned",
+        "updated": "2024-09-22"
+    },
+    {
+        "stop_id": 733,
+        "latitude": 43.03467137546226,
+        "longitude": -87.9087088486897,
+        "name": "Water and St. Paul",
+        "direction": "Northbound",
+        "status": "active",
+        "updated": "2024-12-07",
+        "seen": "2024-10-16"
+    },
+    {
+        "stop_id": 630,
+        "latitude": 43.041135,
+        "longitude": -87.910062,
+        "name": "Water and Wells (Pabst Theatre)",
+        "direction": "Southbound",
+        "status": "active",
+        "updated": "2024-12-17",
+        "deployed": "2024-12-17",
+        "seen": "2024-12-17",
+        "image": "assets/benches/20241216__water_and_wells.jpg"
+    },
+    {
+        "stop_id": 1425,
+        "latitude": 43.043507,
+        "longitude": -87.911013,
+        "name": "Water and State",
+        "direction": "Southbound",
+        "status": "planned"
+    },
+    {
+        "stop_id": 6842,
+        "latitude": 43.064538603762045,
+        "longitude": -87.98762205481903,
+        "name": "60th and Wright",
+        "direction": "Southbound",
+        "status": "missing",
+        "updated": "2024-08-28"
+    },
+    {
+        "stop_id": 281,
+        "latitude": 43.016953696815726,
+        "longitude": -87.93346386395059,
+        "name": "Greenfield and 16th",
+        "direction": "Eastbound",
+        "status": "active"
+    },
+    {
+        "stop_id": 280,
+        "latitude": 43.016949604648,
+        "longitude": -87.93968538554081,
+        "name": "Greenfield and 21st",
+        "direction": "Eastbound",
+        "status": "active"
+    },
+    {
+        "latitude": 43.0678541733565,
+        "longitude": -87.94810261360301,
+        "name": "27th and Fond Du Lac",
+        "direction": "Eastbound",
+        "status": "active"
+    },
+    {
+        "stop_id": 3927,
+        "latitude": 43.06433432161688,
+        "longitude": -87.94754366127842,
+        "name": "27th and Wright",
+        "direction": "Southbound",
+        "status": "active"
+    },
+    {
+        "stop_id": 4066,
+        "latitude": 43.064185883234266,
+        "longitude": -87.94736206104443,
+        "name": "27th and Wright",
+        "direction": "Northbound",
+        "status": "active"
+    },
+    {
+        "stop_id": 5484,
+        "latitude": 42.95924412235244,
+        "longitude": -87.94908410050479,
+        "name": "27th and Layton",
+        "direction": "Eastbound",
+        "status": "planned"
+    },
+    {
+        "stop_id": 4019,
+        "latitude": 42.959190313938464,
+        "longitude": -87.94841659415721,
+        "name": "27th and Layton",
+        "direction": "Northbound",
+        "status": "planned"
+    },
+    {
+        "stop_id": 279,
+        "latitude": 43.01686678772006,
+        "longitude": -87.9481108099731,
+        "name": "Greenfield and Layton Blvd",
+        "direction": "Eastbound",
+        "status": "active"
+    },
+    {
+        "stop_id": 5206,
+        "latitude": 43.00295470295586,
+        "longitude": -87.90835524757111,
+        "name": "Lincoln and Ward",
+        "direction": "Westbound",
+        "status": "planned"
+    },
+    {
+        "stop_id": 650,
+        "latitude": 43.00306691309367,
+        "longitude": -87.904849838174,
+        "name": "Howell and Lincoln",
+        "direction": "Southbound",
+        "status": "planned"
+    },
+    {
+        "stop_id": 717,
+        "latitude": 43.002743,
+        "longitude": -87.904677,
+        "name": "Howell and Lincoln (Colectivo)",
+        "direction": "Northbound",
+        "status": "planned"
+    },
+    {
+        "latitude": 43.01177391067734,
+        "longitude": -87.91003438883084,
+        "name": "MCTS Kinnickinnic Station",
+        "direction": "Northbound",
+        "status": "planned",
+        "updated": "2024-09-22"
+    },
+    {
+        "stop_id": 389,
+        "latitude": 43.07435864480907,
+        "longitude": -88.06534422100775,
+        "name": "Burleigh and 122nd",
+        "direction": "Eastbound",
+        "status": "planned",
+        "updated": "2024-09-25"
+    },
+    {
+        "stop_id": 5466,
+        "latitude": 42.95670282782684,
+        "longitude": -88.00811494963486,
+        "name": "76th and W Barnard",
+        "direction": "Northbound",
+        "status": "planned",
+        "updated": "2024-12-08"
+    },
+    {
+        "stop_id": 711,
+        "latitude": 42.99162937114023,
+        "longitude": -87.9042583119918,
+        "name": "Howell and Dewey",
+        "direction": "Southbound",
+        "status": "planned",
+        "updated": "2024-09-25"
+    }
+]

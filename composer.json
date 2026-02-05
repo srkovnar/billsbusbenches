@@ -4,11 +4,10 @@
     "authors": [
         {
             "name": "srkovnar",
-            "email": "srkovnar@gmail.com"
+            "email": "srkovnar@proton.me"
         }
     ],
     "require": {
-        "fakerphp/faker": "^1.23",
         "twbs/bootstrap": "^5.3",
         "phpmailer/phpmailer": "^6.9"
     }

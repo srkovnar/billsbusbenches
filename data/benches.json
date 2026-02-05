@@ -31,7 +31,6 @@
         "status": "active",
         "deployed": "2024-12-17",
         "updated": "2024-12-17",
-        "seen": "2024-12-17",
         "image": "assets/benches/20241217__holton_and_north.jpg"
     },
     {
@@ -87,7 +86,6 @@
         "direction": "Southbound",
         "status": "active",
         "updated": "2025-01-09",
-        "seen": "2024-10-16",
         "repaired": "2024-12-07",
         "image": "assets/benches/20250109__6th_and_rosedale.jpg"
     },
@@ -121,7 +119,6 @@
         "status": "active",
         "updated": "2024-12-17",
         "deployed": "2024-12-17",
-        "seen": "2024-12-17",
         "image": "assets/benches/20241217__farwell_and_lafayette.jpg"
     },
     {
@@ -140,8 +137,7 @@
         "name": "Water and St. Paul",
         "direction": "Northbound",
         "status": "active",
-        "updated": "2024-12-07",
-        "seen": "2024-10-16"
+        "updated": "2024-12-07"
     },
     {
         "stop_id": 630,
@@ -152,7 +148,6 @@
         "status": "active",
         "updated": "2024-12-17",
         "deployed": "2024-12-17",
-        "seen": "2024-12-17",
         "image": "assets/benches/20241216__water_and_wells.jpg"
     },
     {

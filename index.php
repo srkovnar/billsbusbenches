@@ -1,12 +1,10 @@
 <?php
   require('vendor/autoload.php');
 
-  // Fetch bench location data from JSON file in a non-public directory (see README for details)
-  $bench_location_json_path = "./benches.json";
+  // Fetch bench location data from JSON file (see README.md for details)
+  $bench_location_json_path = "./data/benches.json";
   $bench_location_contents = file_get_contents($bench_location_json_path);
   $results = json_decode($bench_location_contents, true);
-
-  $faker = Faker\Factory::create()
 ?>
 <!DOCTYPE html>
 <html lang="en">

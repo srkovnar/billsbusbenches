@@ -1,6 +1,6 @@
 {
   "name": "billsbusbenches",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Code for Bill's Bus Benches website",
   "main": "mapbuild.js",
   "scripts": {
@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "argparse": "^2.0.1",
+    "doctoc": "^2.2.1",
+    "readline-sync": "^1.4.10",
     "sass": "^1.89.2"
   }
 }

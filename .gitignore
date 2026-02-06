@@ -5,6 +5,7 @@ node_modules
 # Don't commit your keys to main
 config.json
 settings.php
+settings-backup.php
 
 # My personal project notes
 ignore.txt

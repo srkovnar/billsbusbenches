@@ -1,0 +1,23 @@
+# Changelog
+
+## 2.0.0 - 2025-02-06
+
+### Added
+
+- NodeJS helper script to generate configuration file for new developers
+- Checked bench data and images into version control
+
+- New NodeJS dependency: doctoc, for updating README.md table of contents
+- New NodeJS dependency: readline-sync, used by new configuration file setup script
+
+### Fixed
+
+### Changed
+
+- Switched configuration file from JSON to PHP
+- Moved configuration file into main directory instead of outside of the project
+- Separated email submission page from thankyou page to allow for easier testing and cleaner presentation
+
+## 1.0.0
+
+Initial release.

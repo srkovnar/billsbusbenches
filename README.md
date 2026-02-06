@@ -1,23 +1,57 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [bills-bus-benches](#bills-bus-benches)
+- [About The Code](#about-the-code)
+  - [Setup](#setup)
+    - [Necessary Programs](#necessary-programs)
+    - [Windows instructions](#windows-instructions)
+    - [Linux instructions](#linux-instructions)
+    - [Verifying your installation](#verifying-your-installation)
+    - [Installing dependencies](#installing-dependencies)
+  - [Creating a configuration file (settings.php)](#creating-a-configuration-file-settingsphp)
+  - [Attributions](#attributions)
+  - [Bench Data Format](#bench-data-format)
+  - [Future To-Do](#future-to-do)
+    - [Images](#images)
+- [Old Documentation](#old-documentation)
+  - [Composer Libraries Used](#composer-libraries-used)
+  - [Getting mail to work is a pain.](#getting-mail-to-work-is-a-pain)
+    - [PHP's mail function is PHPMailer's biggest advertisement.](#phps-mail-function-is-phpmailers-biggest-advertisement)
+    - [A note about Gmail](#a-note-about-gmail)
+  - [Known Bugs](#known-bugs)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # bills-bus-benches
 
 Code for Bill's Bus Benches website
 
+# Updating this guide
+
+This README.md is meant for developers of this codebase.
+
+Whenever you update this guide with a new section or heading, make sure to update the table of contents. There is an included NPM package to do this. Once you have installed dependencies, run the command below to update the table of contents:
+
+```
+node node_modules/doctoc/doctoc.js README.md
+```
+
+See [Setup Section](#setup) for details on installing dependencies. You must follow the instructions in that section to completion before you can run the table of contents update command.
+
 # About The Code
 
-## Setting up the folder structure
+## Attributions
 
-Because of the way that this project is hosted, we keep the configuration details outside of the main project directory. You'll need to set up your files like this:
+This website is built using Bootstrap CSS framework: [https://getbootstrap.com](https://getbootstrap.com)
 
-```
-your_folder/
-├── billsbusbenches/
-│   └── (everything else)
-└── config.json
-```
-
-You'll need to create config.json yourself, to hold any access information for your deployment. This will be covered in more detail later on.
+The map is built with Leaflet.js ([https://leafletjs.com/](https://leafletjs.com/))
+and uses OpenStreetMap map data ([https://www.openstreetmap.org](https://www.openstreetmap.org)).
 
 ## Setup
+
+### Necessary Programs
 
 Before you can run this code locally, you must install the following programs:
 
@@ -26,16 +60,85 @@ Before you can run this code locally, you must install the following programs:
 - NodeJS
 - Node Package Manager (NPM) (a library manager for NodeJS)
 
+Installation instructions will vary based on your operating system.
+
+### Windows instructions
+
+On Windows, you'll have to go to the websites for each of the programs you need and download the installers.
+
+- PHP: [https://www.php.net/downloads.php](https://www.php.net/downloads.php)
+- Composer: [https://getcomposer.org/download/](https://getcomposer.org/download/)
+- NodeJS and NPM: [https://nodejs.org/en/download](https://nodejs.org/en/download)
+
+You might need to reboot after you finish the installations in order to use them from your terminal.
+
+### Linux instructions
+
+On Linux, you can install `php`, `composer`, `nodejs`, and `npm` from your package manager.
+
+For example, on Debian-based systems, you can run the following command to get the four programs you need:
+
+```
+sudo apt install php composer nodejs npm
+```
+
+### Verifying your installation
+
+After you've installed the needed programs, check the version of each one as shown below to verify that they are usable.
+
+```
+php --version
+```
+
+```
+composer --version
+```
+
+```
+node --version
+```
+
+```
+npm --version
+```
+
+Versions of programs used in development of this code are shown below. In most cases, slight variance will not cause major issues, but if you encounter problems, that's something you can try to address.
+
+Program  | Version
+---------|---------
+PHP      | 8.4.16
+Composer | 2.8.8
+NodeJS   | 22.17.0
+NPM      | 10.9.2
+
+### Installing dependencies
+
+Open a terminal within the project directory.
+
+Running `ls` or `dir` (depending on your operating system and terminal) should show the project files, i.e. composer.json, package.json, index.php, etc. If you do not see these files, you are in the wrong directory.
+
 Run `composer install` to download all needed PHP libraries. These are needed to run the website.
 
-Run `npm i` to download all needed NodeJS libraries. Right now, these are only needed for development - you can skip this unless you plan on changing the stylesheet.
+Run `npm i` to download all needed NodeJS libraries. Right now, these are only needed for development and are not needed by the website itself.
 
-## Attributions
+## Creating a configuration file (settings.php)
 
-This website is built using Bootstrap CSS framework: [https://getbootstrap.com](https://getbootstrap.com)
+In order for the contact form to work properly, you will need to create a `settings.php` file to store your information. This file is ignored by version control (git), and SHOULD NEVER BE SAVED ANYWHERE PUBLIC.
 
-The map is built with Leaflet.js ([https://leafletjs.com/](https://leafletjs.com/))
-and uses OpenStreetMap map data ([https://www.openstreetmap.org](https://www.openstreetmap.org)).
+There is a provided script that will create the file for you. To run the script, run the following command in a terminal from within the project directory:
+
+```
+node tools/setup.js
+```
+
+You will need to provide the script with the following information:
+
+Field Name  | Description
+------------|-------------
+SMTP Server | The hostname of your mailing server (i.e. smtp.gmail.com, smtp.hostinger.com). You can usually find this in the documentation for your email hosting provider.
+SMTP Username | The username you use to log in to the email from which Contact Form responses should be sent. You must have access to a valid email account that will be used to send the emails.
+SMTP Password | The password you use to log in to the email from which Contact Form responses should be sent.You must have access to a valid email account that will be used to send the emails.
+SMTP Destination | The destination address for Contact Form responses. This should be an email that can be checked by a human. This does not have to be the same as the SMTP username, but for simplicity, it often is. In our case, we use two different mailboxes - one provided by our hosting service, and a Gmail that can be more easily accessed by our staff.
 
 ## Bench Data Format
 

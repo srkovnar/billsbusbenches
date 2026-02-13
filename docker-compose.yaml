@@ -1,0 +1,23 @@
+version: '3'
+services:
+  web:
+    image: php:8.2-apache
+    ports:
+      - "8080:80"
+    volumes:
+      # Mount the repository as the document root
+      - ./:/var/www/html
+    environment:
+      - NON_INTERACTIVE=true
+    command: >
+      bash -c "
+        apt-get update && apt-get install -y git unzip curl &&
+        curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&
+        apt-get install -y nodejs &&
+        cd /var/www/html &&
+        npm install &&
+        node utilities/setup.js --dummy &&
+        curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer &&
+        composer install &&
+        apache2-foreground
+      "

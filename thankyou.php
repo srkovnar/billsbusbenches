@@ -72,6 +72,8 @@
     </div>
   </section>
 
+  <?php include_once("./components/footer.php"); ?>
+
   <!-- Return to main page -->
 </body>
 </html>

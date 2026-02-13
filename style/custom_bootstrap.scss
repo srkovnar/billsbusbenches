@@ -1,0 +1,22 @@
+// Custom.scss
+// https://www.freecodecamp.org/news/how-to-customize-bootstrap-with-sass/
+
+// Compilation command: `sass custom.scss custom.css`
+
+// extension: live sass compiler
+
+$warning: #ffb549; // Gold
+$info: #00abd8; // Light blue
+$primary: #00305a; // Dark blue
+
+
+// Option A: Include all of bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+
+// Include Bootstrap from composer since that's what I'm using for other parts of this project.
+@import "../vendor/twbs/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+
+

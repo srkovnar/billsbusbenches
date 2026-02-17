@@ -36,22 +36,16 @@
       <div class="collapse navbar-collapse justify-content-center align-center text-primary" id="main-nav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="#support-us" class="nav-link">Donate</a>
-          </li>
-          <li class="nav-item">
             <a href="#about" class="nav-link">About</a>
-          </li>
-          <li>
-            <a href="#get-involved" class="nav-link">Get Involved</a>
           </li>
           <li>
             <a href="#mapsection" class="nav-link">Map</a>
           </li>
           <li>
-            <a href="#guides" class="nav-link">Guides</a>
+            <a href="#contact" class="nav-link">Contact</a>
           </li>
           <li>
-            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#supporters" class="nav-link">Our Supporters</a>
           </li>
         </ul>
       </div>

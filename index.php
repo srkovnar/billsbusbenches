@@ -8,14 +8,6 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
-  <!--
-  Future try:
-  - the tiny text stack.
-  - Try using petite-vue JS framework
-  - ionic for mobile apps
-  - Cloud firestore for database? Plus firebase for authentication.
-  -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,6 +33,12 @@
 
   <!-- Style for the map box on this page -->
   <link rel="stylesheet" href="./style/map.css">
+
+  <style>
+    .scrollsection {
+      scroll-margin-top: 80px; /* Adjust to match navbar height */
+    }
+  </style>
 </head>
 <body>
 
@@ -53,9 +51,9 @@
   ?>
 
   <!-- Banner -->
-  <img src="./assets/images/Banner_Draft.png" alt="One of our bus bench builds" class="img-fluid w-100">
+  <img src="./assets/site/Banner_Draft.png" alt="One of our bus bench builds" class="img-fluid w-100">
 
-  <section id="about" class="bg-primary">
+  <section id="about" class="scrollsection bg-primary">
     <div class="container-lg pt-3">
       <div class="row justify-content-center">
         <div class="col-12 col-md-7 bg-white rounded-5"> <!--text-center text-md-start-->
@@ -77,10 +75,10 @@
     </div>
   </section>
 
-  <section id="cards" class="bg-primary">
+  <section id="cards" class="scrollsection bg-primary">
     <div class="container py-3">
       <div class="row align-center justify-content-center g-3 my-3"> <!-- align-center will center things vertically -->
-        <div class="col-8 col-lg-4 d-flex align-items-stretch">
+        <div class="col-10 col-lg-4 d-flex align-items-stretch">
           <div class="card rounded-5"> <!-- maybe add border-0 -->
             <img src="assets/images/IMG_6569.jpg" class="card-img-top rounded-5" style="object-fit: cover; height: 200px" alt="...">
             <div class="card-body text-center">
@@ -92,17 +90,17 @@
             </div>
           </div>
         </div>
-        <div class="col-8 col-lg-4 d-flex align-items-stretch">
+        <div class="col-10 col-lg-4 d-flex align-items-stretch">
           <div class="card rounded-5">
             <img src="assets/images/20250330_153259.jpg" class="card-img-top rounded-5" style="object-fit: cover; height: 200px" alt="...">
             <div class="card-body text-center">
               <h4 class="card-title">Get Involved</h4>
               <p class="card-text">Whether you are a leader in your community, or a neighbor who believes in what we are doing, we need your help. Fill out our contact form, or email us at <a href="mailto://billsbusbenches@gmail.com">billsbusbenches@gmail.com</a>.</p>
-              <a href="#contact" class="btn btn-warning fs-4 mx-5 mb-3 px-4 py-2 rounded-pill">Learn more</a>
+              <a href="#contact" class="btn btn-warning fs-4 mx-5 mb-3 px-4 py-2 rounded-pill">Contact Us</a>
             </div>
           </div>
         </div>
-        <div class="col-8 col-lg-4 d-flex align-items-stretch">
+        <div class="col-10 col-lg-4 d-flex align-items-stretch">
           <div class="card rounded-5">
             <img src="assets/images/20260125_144047.jpg" class="card-img-top rounded-5" style="object-fit: cover; height: 200px" alt="...">
             <div class="card-body text-center">
@@ -116,7 +114,7 @@
     </div>
   </section>
 
-  <section id="mapsection">
+  <section id="mapsection" class="scrollsection">
     <div class="container-fluid py-3 bg-primary">
       <div class="row bg-primary justify-content-center">
         <h1 class="display-5 text-center py-3 text-white">Our Impact In Milwaukee</h1>
@@ -147,7 +145,7 @@
     </div>
   </section>
 
-  <section id="faq" class="bg-primary">
+  <section id="faq" class="scrollsection bg-primary">
     <div class="container-lg pt-3 pb-3">
       <div class="row justify-content-center text-center">
         <div class="col-md-10 col-lg-8">
@@ -215,10 +213,9 @@
     </div>
   </section>
 
-  <section id="contact" class="bg-primary">
+  <section id="contact" class="scrollsection bg-primary">
     <div class="container-xl text-white">
       <h1 class="display-5 text-center py-3">Contact Us</h1>
-      <!-- <form action="/formsubmit.php" method="POST"> -->
       <form action="/emailsubmit.php" method="POST">
         <div class="form-group row justify-content-center py-2">
           <div class="col-sm-6 col-md-4"> <!-- Take up whole row up to "small" threshold -->
@@ -261,7 +258,7 @@
     </div>
   </section>
 
-  <section id="supporters" class="bg-primary">
+  <section id="supporters" class="scrollsection bg-primary">
     <div class="container-xl bg-white rounded-5 pb-3">
       <div class="row text-center justify-content-center">
         <div class="col-md-10 col-lg-8">
@@ -270,7 +267,7 @@
       </div>
       <div class="row text-center justify-content-center">
         <div class="col-md-10 col-lg-8">
-          <img src="./assets/images/logo__bliffert.png" alt="Logo for Bliffert Co., one of our sponsors" class="img-fluid mx-5 mb-3 px-4 py-2">
+          <img src="./assets/site/logo__bliffert.png" alt="Logo for Bliffert Co., one of our sponsors" class="img-fluid mb-3 py-2">
         </div>
       </div>
       <div class="row justify-content-center">
@@ -279,6 +276,49 @@
             Thank you to Bliffert Lumber & Hardware for donating lumber to be used for our bench-building efforts! Thanks to them, we have been able to replace some of our original benches with a sturdier design, as well as expand to new locations.
           </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="scrollsection bg-primary">
+    <div class="container-xl py-3">
+      <div class="row justify-content-center">
+          <h1 class="display-5 text-center text-white py-3">Gallery</h1>
+      </div>
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <?php
+            // Pick the first image to show (doesn't matter, but there has to be one!)
+            $first = "bus_bench_build_1.png";
+            // Grab all files in assets/images. All images in this folder will be in the slideshow.
+            $images = scandir("assets/images");
+            foreach($images as $image) {
+              if (($image != ".") && ($image != "..")) {
+                if ($image == $first) {
+                  echo "
+          <div class='carousel-item active'>
+            <img src='assets/images/{$image}' class='d-block' alt='...' style='height: 50vh; margin: auto'>
+          </div>";
+                }
+                else {
+                  echo "
+          <div class='carousel-item'>
+            <img src='assets/images/{$image}' class='d-block' alt='...' style='height: 50vh; margin: auto'>
+          </div>";
+                }
+
+              }
+            }
+          ?>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
   </section>

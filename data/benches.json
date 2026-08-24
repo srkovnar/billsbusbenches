@@ -34,6 +34,17 @@
         "image": "assets/benches/20241217__holton_and_north.jpg"
     },
     {
+        "stop_id": 1039,
+        "latitude": 43.067669251558506,
+        "longitude": -87.90538414589416,
+        "name": "Holton and Center",
+        "direction": "Southbound",
+        "status": "active",
+        "deployed": "2026-08-16",
+        "updated": "2026-08-16",
+        "image": "assets/benches/20260816__holton_and_center.jpg"
+    },
+    {
         "latitude": 43.054783544046295,
         "longitude": -87.95775363703311,
         "name": "35th and Lisbon",
@@ -204,7 +215,8 @@
         "longitude": -87.94736206104443,
         "name": "27th and Wright",
         "direction": "Northbound",
-        "status": "active"
+        "updated": "2026-08-20",
+        "status": "missing"
     },
     {
         "stop_id": 5484,

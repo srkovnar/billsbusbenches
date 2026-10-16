@@ -51,7 +51,7 @@
   ?>
 
   <!-- Banner -->
-  <img src="./assets/site/Banner_Draft.png" alt="One of our bus bench builds" class="img-fluid w-100">
+  <img src="./assets/site/banner.png" alt="One of our bus bench builds" class="img-fluid w-100">
 
   <section id="about" class="scrollsection bg-primary">
     <div class="container-lg pt-3">

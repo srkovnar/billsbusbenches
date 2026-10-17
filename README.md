@@ -3,7 +3,9 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [bills-bus-benches](#bills-bus-benches)
+- [Updating this guide](#updating-this-guide)
 - [About The Code](#about-the-code)
+  - [Attributions](#attributions)
   - [Setup](#setup)
     - [Necessary Programs](#necessary-programs)
     - [Windows instructions](#windows-instructions)
@@ -11,7 +13,6 @@
     - [Verifying your installation](#verifying-your-installation)
     - [Installing dependencies](#installing-dependencies)
   - [Creating a configuration file (settings.php)](#creating-a-configuration-file-settingsphp)
-  - [Attributions](#attributions)
   - [Bench Data Format](#bench-data-format)
   - [Future To-Do](#future-to-do)
     - [Images](#images)
@@ -64,21 +65,38 @@ Installation instructions will vary based on your operating system.
 
 ### Windows instructions
 
-On Windows, you'll have to go to the websites for each of the programs you need and download the installers.
+For Windows users, I have provided a dedicated `docker-compose.yaml` file to facilitate hosting this code locally with Docker. You will need both Docker and Windows Subsystem for Linux installed. Consult Docker's documentation for more details.
 
-- PHP: [https://www.php.net/downloads.php](https://www.php.net/downloads.php)
-- Composer: [https://getcomposer.org/download/](https://getcomposer.org/download/)
-- NodeJS and NPM: [https://nodejs.org/en/download](https://nodejs.org/en/download)
+Once you have docker installed, you can launch the container by running the following command from within your `billsbusbenches` folder:
 
-You might need to reboot after you finish the installations in order to use them from your terminal.
+```bash
+docker compose up
+```
+
+To view active Docker processes:
+
+```bash
+docker ps
+```
+
+To shut down the container:
+
+```bash
+docker compose down
+```
 
 ### Linux instructions
 
-On Linux, you can install `php`, `composer`, `nodejs`, and `npm` from your package manager.
+On Linux, you can either use the provided `docker-compose.yaml` file to create a Docker container, or you can install the various packages manually (this is what docker compose is doing under the hood). For the latter method, you will need to install the following packages from your distro's package manager:
+
+- `php`
+- `composer`
+- `nodejs`
+- `npm`
 
 For example, on Debian-based systems, you can run the following command to get the four programs you need:
 
-```
+```bash
 sudo apt install php composer nodejs npm
 ```
 
@@ -86,30 +104,21 @@ sudo apt install php composer nodejs npm
 
 After you've installed the needed programs, check the version of each one as shown below to verify that they are usable.
 
-```
+```bash
 php --version
 ```
 
-```
+```bash
 composer --version
 ```
 
-```
+```bash
 node --version
 ```
 
-```
+```bash
 npm --version
 ```
-
-Versions of programs used in development of this code are shown below. In most cases, slight variance will not cause major issues, but if you encounter problems, that's something you can try to address.
-
-Program  | Version
----------|---------
-PHP      | 8.4.16
-Composer | 2.8.8
-NodeJS   | 22.17.0
-NPM      | 10.9.2
 
 ### Installing dependencies
 
